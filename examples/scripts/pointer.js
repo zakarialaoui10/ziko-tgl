@@ -12,7 +12,8 @@ obj=[]
 for(i=-2;i<=2;i++){
 	for(j=-2;j<=2;j++){
 		for(k=-2;k<=2;k++){
-			obj.push(cube3(0.5).pos(i*4.5,j*4.5,3*k).style({color:Random.color()}))
+			// obj.push(cube3(0.5).pos(i*4.5,j*4.5,3*k).style({color:Random.color()}))
+			obj.push(cube3(0.5).pos(i*4.5,j*4.5,3*k).style({color:0x222222}))
 		}
 	}
 }

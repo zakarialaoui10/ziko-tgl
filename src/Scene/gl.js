@@ -1,4 +1,4 @@
-import { ZikoUIContainerElement, html } from "ziko";
+import { ZikoUIElement, html } from "ziko";
 import {
     WebGLRenderer, 
     Scene,
@@ -24,7 +24,7 @@ import {
     ZikoPointerLockControls
 } from "../Controls/index.js";
 import { isValidTexture, useTexture } from "../Loaders/texture.js";
-class ZikoThreeSceneGl extends ZikoUIContainerElement{
+class ZikoThreeSceneGl extends ZikoUIElement{
     constructor(w,h){
         super("figure","figure")
         Object.assign(this.cache,{
