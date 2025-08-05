@@ -1,6 +1,6 @@
 {
   "name": "ziko-gl",
-  "version": "0.0.4",
+  "version": "0.5.0",
   "description": "",
   "main": "src/index.js",
   "type": "module",
@@ -18,15 +18,15 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "rollup -c rollup.config.js",
     "build": "rollup -c rollup.config.js",
-    "dev": "rollup -c watch/rollup.config.js",
     "watch": "rollup -c watch/rollup.config.js -w"
   },
   "author": "zakaria elalaoui",
   "license": "MIT",
   "dependencies": {
     "three": "^0.158.0",
-    "ziko": "^0.0.24"
+    "ziko": "^0.34.1"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.4",
