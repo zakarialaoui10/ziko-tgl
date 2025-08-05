@@ -1,5 +1,5 @@
 ZikoGl is a [Zikojs](https://github.com/zakarialaoui10/ziko.js) plugin built on the top of [Threejs](https://threejs.org/)
-## Demo 
+## Demo  
  [Windows entaglement](https://www.linkedin.com/posts/zakaria-elalaoui-810ab41b8_javascript-zikojs-threejs-activity-7144023650394918913-gatB?utm_source=share&utm_medium=member_desktop)
 ## Scene
 ZikoGl provides a variety of scene setups to meet diverse rendering needs. Scenes in ZikoGl are an instance of ZikoElement, allowing you to utilize all ZikoElement methods.
