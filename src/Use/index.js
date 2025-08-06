@@ -1,9 +1,9 @@
-export { useTexture } from "../Loaders/texture"
+export { useTexture } from "../loaders/texture"
 // export { useTransformControls } from "../Controls/transform";
-export { useEdges } from "../Object3D/ZikoThreePrimitives/ZikoThreeEdges"
-export { useWireframe } from "../Object3D/ZikoThreePrimitives/ZikoThreeWireframe";
-export { usePoints } from "../Object3D/ZikoThreePrimitives/ZikoThreePoints";
-export { useSprite } from "../Object3D/ZikoThreePrimitives/ZikoThreeSprite";
+export { useEdges } from "../object-3d/ZikoThreePrimitives/ZikoThreeEdges"
+export { useWireframe } from "../object-3d/ZikoThreePrimitives/ZikoThreeWireframe";
+export { usePoints } from "../object-3d/ZikoThreePrimitives/ZikoThreePoints";
+export { useSprite } from "../object-3d/ZikoThreePrimitives/ZikoThreeSprite";
 
 export {
     useCoordinates

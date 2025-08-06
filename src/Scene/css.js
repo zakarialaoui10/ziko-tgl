@@ -2,8 +2,8 @@ import { ZikoUIElement } from "ziko";
 import * as THREE from "three"
 import { CSS3DRenderer } from 'three/addons/renderers/CSS3DRenderer.js';
 import { ZikoThreeSceneGl } from "./gl";
-import { ui3 } from "../Object3D/index"
-import { ZikoThreeObject3D } from "../Object3D/ZikoThreeObject3D";
+import { ui3 } from "../object-3d/index"
+import { ZikoThreeObject3D } from "../object-3d/ZikoThreeObject3D";
 class ZikoThreeSceneCss extends ZikoThreeSceneGl{
     constructor(w,h){
         super(w,h)

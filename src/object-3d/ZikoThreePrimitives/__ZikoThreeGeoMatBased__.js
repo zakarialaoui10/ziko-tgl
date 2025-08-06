@@ -1,6 +1,6 @@
 import { Color } from "three";
 import { ZikoThreeObject3D } from "../ZikoThreeObject3D";
-import { isValidTexture, useTexture } from "../../Loaders/texture";
+import { isValidTexture, useTexture } from "../../loaders/texture";
 class __ZikoThreeGeoMatBased__ extends ZikoThreeObject3D{
     constructor(){
         super()

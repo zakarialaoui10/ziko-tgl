@@ -9,11 +9,11 @@ import {
     Fog,
     FogExp2
  } from "three";
-import { ZikoCamera } from "../camera";
+import { ZikoCamera } from "../camera/index.js";
 import { 
     ZikoThreeObject3D,
- } from "../Object3D/ZikoThreeObject3D.js";
-import {  waitElm } from "../Utils";
+ } from "../object-3d/ZikoThreeObject3D.js";
+import {  waitElm } from "../utils/index.js";
 import { 
     ZikoOrbitControls, 
     ZikoMapControls,
@@ -22,8 +22,8 @@ import {
     ZikoArcballControls,
     ZikoFirstPersonControls,
     ZikoPointerLockControls
-} from "../Controls/index.js";
-import { isValidTexture, useTexture } from "../Loaders/texture.js";
+} from "../controls/index.js";
+import { isValidTexture, useTexture } from "../loaders/texture.js";
 class ZikoThreeSceneGl extends ZikoUIElement{
     constructor(w,h){
         super("figure","figure")

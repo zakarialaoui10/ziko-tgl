@@ -3,8 +3,8 @@ import {
     SpriteMaterial
  } from "three";
 import { __ZikoThreeGeoMatBased__ } from "./__ZikoThreeGeoMatBased__";
-import { isValidTexture } from "../../Loaders/texture";
-import { useTexture } from "../../Loaders/texture";
+import { isValidTexture } from "../../loaders/texture";
+import { useTexture } from "../../loaders/texture";
 class ZikoThreeSprite extends __ZikoThreeGeoMatBased__{
     constructor(texture){
         super()

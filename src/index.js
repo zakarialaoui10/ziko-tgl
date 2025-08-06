@@ -1,7 +1,7 @@
 import * as THREE from "three"
-import { SceneGl } from "./Scene/gl.js";
-import { SceneCss } from "./Scene/css.js";
-import { loadSVG } from "./Loaders/svg.js";
+import { SceneGl } from "./scene/gl.js";
+import { SceneCss } from "./scene/css.js";
+import { loadSVG } from "./loaders/svg.js";
 import { 
     useAmbientLight,
     useDirectionalLight,
@@ -9,7 +9,7 @@ import {
     usePointLight,
     useRectAreaLight,
     useSpotLight,
-} from "./Light/index.js";
+} from "./light/index.js";
 import{
     useAxesHelper,
     useGridHelper,
@@ -19,7 +19,7 @@ import{
     useBoxVectorHelper,
     useArrowHelper,
     useLightHelper
-} from "./Object3D/ZikoThreeHelper/index.js"
+} from "./object-3d/ZikoThreeHelper/index.js"
 import { 
     useCoordinates,
     useTexture,
@@ -27,7 +27,7 @@ import {
     useWireframe,
     usePoints,
     useSprite
- } from "./Use";
+ } from "./use/index.js";
 import{
     cube3,
     plane3,
@@ -51,12 +51,12 @@ import{
     htmlMesh,
     text3,
     text2
-} from "./Object3D/index.js";
+} from "./object-3d/index.js";
 import { 
     useDragControls,
     usePointerControls,
     useTransformControls
- } from "./Controls";
+ } from "./controls/index.js";
 const ZikoGl={
     THREE,
     ui3,
@@ -135,7 +135,7 @@ if ( globalThis.__ZikoGl__ ) {
             }
         };
 	}
-export * from "./Scene";
-export * from "./Object3D";
-export * from "./Use";
+export * from "./scene/index.js";
+export * from "./object-3d";
+export * from "./use/index.js";
 export default ZikoGl
