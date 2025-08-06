@@ -24,53 +24,38 @@ import {
     MeshToonMaterial
  } from "three";
 import { __ZikoThreeGeoMatBased__ } from "./__ZikoThreeGeoMatBased__";
-class ZikoThreeMesh extends __ZikoThreeGeoMatBased__{
-    constructor(Geometry,Material){
+class ZikoThreeMesh extends __ZikoThreeGeoMatBased__ {
+    constructor(Geometry, Material) {
         super();
-        this.element=new Mesh(Geometry,Material);
+        this.element = new Mesh(Geometry, Material);
     }
-    get type(){
-        return "mesh"
+    isMesh(){
+        return true;
     }
-    useMeshBasicMaterial(){
-        this.element.material=new MeshBasicMaterial(this.cache.materialAttributes);
-        return this;
+    get type() {
+        return "mesh";
     }
-    useMeshPhongMaterial(){
-        this.element.material=new MeshPhongMaterial(this.cache.materialAttributes);
-        return this;
-    }
-    useMeshDepthMaterial(){
-        this.element.material=new MeshDepthMaterial(this.cache.materialAttributes);
-        return this;
-    }
-    useMeshLambertMaterial(){
-        this.element.material=new MeshLambertMaterial(this.cache.materialAttributes);
-        return this;
-    }
-    useMeshPhysicalMaterial(){
-        this.element.material=new MeshPhysicalMaterial(this.cache.materialAttributes);
-        return this;
-    }
-    useMeshNormalMaterial(){
-        this.element.material=new MeshNormalMaterial(this.cache.materialAttributes);
-        return this;
-    }
-    useMeshStandardMaterial(){
-        this.element.material=new MeshStandardMaterial(this.cache.materialAttributes);
-        return this;
-    }
-    useMeshDistanceMaterial(){
-        this.element.material=new MeshDistanceMaterial(this.cache.materialAttributes);
-        return this;
-    }
-    useMeshMatcapMaterial(){
-        this.element.material=new MeshMatcapMaterial(this.cache.materialAttributes);
-        return this;
-    }
-    useMeshToonMaterial(){
-        this.element.material=new MeshToonMaterial(this.cache.materialAttributes);
-        return this;
+    static {
+        const materialMap = {
+            MeshBasicMaterial,
+            MeshPhongMaterial,
+            MeshDepthMaterial,
+            MeshLambertMaterial,
+            MeshPhysicalMaterial,
+            MeshNormalMaterial,
+            MeshStandardMaterial,
+            MeshDistanceMaterial,
+            MeshMatcapMaterial,
+            MeshToonMaterial
+        };
+        for (const [name, MaterialClass] of Object.entries(materialMap)) {
+            const methodName = `use${name}`;
+            this.prototype[methodName] = function () {
+                this.element.material = new MaterialClass(this.cache.materialAttributes);
+                this?.parent?.renderGl()
+                return this;
+            };
+        }
     }
 }
 const cube3=(l)=>new ZikoThreeMesh(new BoxGeometry(l,l,l));
