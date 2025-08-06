@@ -19,14 +19,16 @@ export default {
     format: 'cjs',
     banner,
     globals: {
-      ziko: 'Ziko'
+      ziko: 'Ziko',
+      three : 'Three'
     }
   },{
     file: 'dist/zikogl.mjs',
     format: 'es',
     banner,
     globals: {
-      ziko: 'Ziko'
+      ziko: 'Ziko',
+      three : 'Three'
     }
   },
   {
@@ -35,11 +37,12 @@ export default {
     banner,
     name:"ZikoGl",
     globals: {
-      ziko: 'Ziko'
+      ziko: 'Ziko',
+      three : 'Three'
     }
   }
 ],
-  external: ["ziko"],
+  external: ["ziko", "three"],
   plugins: [resolve(), commonjs()
     //,terser()
     ],

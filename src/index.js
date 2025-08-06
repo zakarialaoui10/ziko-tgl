@@ -49,8 +49,8 @@ import{
     extrude3,
     ui3,
     htmlMesh,
-    text3,
-    text2
+    // text3,
+    // text2
 } from "./object-3d/index.js";
 import { 
     useDragControls,
@@ -61,8 +61,8 @@ const ZikoGl={
     THREE,
     ui3,
     htmlMesh,
-    text3,
-    text2,
+    // text3,
+    // text2,
     loadSVG,
     SceneGl,
     SceneCss,
