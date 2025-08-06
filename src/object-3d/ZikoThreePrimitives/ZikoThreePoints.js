@@ -3,11 +3,14 @@ import {
     PointsMaterial,
     BufferGeometry
  } from "three";
-import { ZikoThreeMesh } from "./ZikoThreeMesh";
-import { __ZikoThreeGeoMatBased__ } from "./__ZikoThreeGeoMatBased__";
+import { ZikoThreeMesh } from "./ZikoThreeMesh.js";
+import { __ZikoThreeGeoMatBased__ } from "./__ZikoThreeGeoMatBased__.js";
 class ZikoThreePoints extends __ZikoThreeGeoMatBased__{
     constructor(){
         super();
+    }
+    isPoints(){
+        return true;
     }
     get type(){
         return "points"

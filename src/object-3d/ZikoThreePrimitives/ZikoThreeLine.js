@@ -12,15 +12,20 @@ class ZikoThreeLine extends __ZikoThreeGeoMatBased__{
         let geometry = BufferGeometry().setFromPoints(points);
         this.element = Line(geometry);
     }
+    isLine(){
+        return true;
+    }
     get type(){
         return "line"
     }
     useLineBasicMaterial(){
         this.element.material=new LineBasicMaterial(this.cache.materialAttributes);
+        this?.parent?.renderGl()
         return this;
     }
     useLineDashedMaterial(){
         this.element.material=new LineDashedMaterial(this.cache.materialAttributes);
+        this?.parent?.renderGl()
         return this;
     }
 }

@@ -23,7 +23,7 @@ import {
     MeshMatcapMaterial,
     MeshToonMaterial
  } from "three";
-import { __ZikoThreeGeoMatBased__ } from "./__ZikoThreeGeoMatBased__";
+import { __ZikoThreeGeoMatBased__ } from "./__ZikoThreeGeoMatBased__.js";
 class ZikoThreeMesh extends __ZikoThreeGeoMatBased__ {
     constructor(Geometry, Material) {
         super();
