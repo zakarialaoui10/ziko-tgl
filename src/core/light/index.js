@@ -1,4 +1,4 @@
-import { ZikoThreeObject3D } from "../object-3d/ZikoThreeObject3D";
+import { ZikoThreeObject3D } from "../object-3d/ZikoThreeObject3D.js";
 import { 
     AmbientLight, 
     DirectionalLight, 
