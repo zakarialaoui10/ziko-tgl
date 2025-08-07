@@ -5,7 +5,7 @@ export * from "./light/index.js"
 export * from "./loaders/index.js"
 export * from "./object-3d/index.js"
 export * from "./use/index.js"
-import * as THREE from "three"
+// import * as THREE from "three"
 import { SceneGl } from "./scene/gl.js";
 import { SceneCss } from "./scene/css.js";
 import { loadSVG } from "./loaders/svg.js";
@@ -64,9 +64,8 @@ import {
     usePointerControls,
     useTransformControls
  } from "./controls/index.js";
-import { exp } from "three/src/nodes/TSL.js";
 const ZikoGl={
-    THREE,
+    // THREE,
     ui3,
     htmlMesh,
     // text3,

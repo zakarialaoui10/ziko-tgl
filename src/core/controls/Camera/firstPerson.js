@@ -1,4 +1,4 @@
-import { FirstPersonControls } from "three/examples/jsm/Addons.js";
+import { FirstPersonControls } from "three/addons/controls/FirstPersonControls.js";
 import { __ZikoThreeCameraControls__ } from './__ZikoThreeCameraControls__';
 
 class ZikoThreeFirstPersonControls extends __ZikoThreeCameraControls__{

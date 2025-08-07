@@ -1,4 +1,4 @@
-import { ArcballControls } from 'three/examples/jsm/Addons.js';
+import { ArcballControls } from 'three/addons/controls/ArcballControls.js';
 import { __ZikoThreeCameraControls__ } from './__ZikoThreeCameraControls__';
 
 class ZikoThreeArcballControls extends __ZikoThreeCameraControls__{

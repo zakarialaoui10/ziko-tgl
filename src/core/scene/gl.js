@@ -4,8 +4,8 @@ import {
     Scene,
     Color,
     PCFSoftShadowMap,
-    Vector2,
-    Raycaster,
+    // Vector2,
+    // Raycaster,
     Fog,
     FogExp2
  } from "three";
@@ -13,15 +13,15 @@ import { ZikoCamera } from "../camera/index.js";
 import { 
     ZikoThreeObject3D,
  } from "../object-3d/ZikoThreeObject3D.js";
-import {  waitElm } from "../utils/index.js";
+import { waitElm } from "../utils/index.js";
 import { 
     ZikoOrbitControls, 
-    ZikoMapControls,
-    ZikoFlyControls,
-    ZikoTrackballControls,
-    ZikoArcballControls,
-    ZikoFirstPersonControls,
-    ZikoPointerLockControls
+    // ZikoMapControls,
+    // ZikoFlyControls,
+    // ZikoTrackballControls,
+    // ZikoArcballControls,
+    // ZikoFirstPersonControls,
+    // ZikoPointerLockControls
 } from "../controls/index.js";
 import { isValidTexture, useTexture } from "../loaders/texture.js";
 class ZikoThreeSceneGl extends ZikoUIElement{
@@ -256,48 +256,48 @@ class ZikoThreeSceneGl extends ZikoUIElement{
         this.cache.currentCameraControls=this.cache.controls.orbit;
         return this;
     }
-    useTrackballControls(){
-        if(!this.cache.controls.trackball)this.cache.controls.trackball=ZikoTrackballControls(this);
-        ["orbit","map","fly","firstPerson","pointerLock","arcball"].forEach(n=>this.controls[n]?.disable(false));
-        this.controls.trackball.enable(false);
-        this.cache.currentCameraControls=this.cache.controls.trackball;
-        return this;
-    }
-    useMapControls(){
-        if(!this.cache.controls.map)this.cache.controls.map=ZikoMapControls(this);
-        ["orbit","trackball","fly","firstPerson","pointerLock","arcball"].forEach(n=>this.controls[n]?.disable(false));
-        this.controls.map.enable(false);
-        this.cache.currentCameraControls=this.cache.controls.map;
-        return this;
-    }
-    useFlyControls(){
-        if(!this.cache.controls.fly)this.cache.controls.fly=ZikoFlyControls(this);
-        ["orbit","trackball","map","firstPerson","pointerLock","arcball"].forEach(n=>this.controls[n]?.disable(false));
-        this.controls.fly.enable(false);
-        this.cache.currentCameraControls=this.cache.controls.fly;
-        return this;
-    }
-    usePointerLockControls(){
-        if(!this.cache.controls.pointerLock)this.cache.controls.pointerLock=ZikoPointerLockControls(this);
-        ["orbit","trackball","map","firstPerson","fly","arcball"].forEach(n=>this.controls[n]?.disable(false));
-        this.controls.pointerLock.enable(false);
-        this.cache.currentCameraControls=this.cache.controls.pointerLock;
-        return this;
-    }
-    useArcballControls(){
-        if(!this.cache.controls.arcball)this.cache.controls.arcball=ZikoArcballControls(this);
-        ["orbit","trackball","map","firstPerson","pointerLock","fly"].forEach(n=>this.controls[n]?.disable(false));
-        this.controls.arcball.enable(false);
-        this.cache.currentCameraControls=this.cache.controls.arcball;
-        return this;
-    }
-    useFirstPersonControls(){
-        if(!this.cache.controls.firstPerson)this.cache.controls.firstPerson=ZikoFirstPersonControls(this);
-        ["orbit","trackball","map","fly","pointerLock","arcball"].forEach(n=>this.controls[n]?.disable(false));
-        this.controls.firstPerson.enable(false);
-        this.cache.currentCameraControls=this.cache.controls.firstPerson;
-        return this;
-    }
+    // useTrackballControls(){
+    //     if(!this.cache.controls.trackball)this.cache.controls.trackball=ZikoTrackballControls(this);
+    //     ["orbit","map","fly","firstPerson","pointerLock","arcball"].forEach(n=>this.controls[n]?.disable(false));
+    //     this.controls.trackball.enable(false);
+    //     this.cache.currentCameraControls=this.cache.controls.trackball;
+    //     return this;
+    // }
+    // useMapControls(){
+    //     if(!this.cache.controls.map)this.cache.controls.map=ZikoMapControls(this);
+    //     ["orbit","trackball","fly","firstPerson","pointerLock","arcball"].forEach(n=>this.controls[n]?.disable(false));
+    //     this.controls.map.enable(false);
+    //     this.cache.currentCameraControls=this.cache.controls.map;
+    //     return this;
+    // }
+    // useFlyControls(){
+    //     if(!this.cache.controls.fly)this.cache.controls.fly=ZikoFlyControls(this);
+    //     ["orbit","trackball","map","firstPerson","pointerLock","arcball"].forEach(n=>this.controls[n]?.disable(false));
+    //     this.controls.fly.enable(false);
+    //     this.cache.currentCameraControls=this.cache.controls.fly;
+    //     return this;
+    // }
+    // usePointerLockControls(){
+    //     if(!this.cache.controls.pointerLock)this.cache.controls.pointerLock=ZikoPointerLockControls(this);
+    //     ["orbit","trackball","map","firstPerson","fly","arcball"].forEach(n=>this.controls[n]?.disable(false));
+    //     this.controls.pointerLock.enable(false);
+    //     this.cache.currentCameraControls=this.cache.controls.pointerLock;
+    //     return this;
+    // }
+    // useArcballControls(){
+    //     if(!this.cache.controls.arcball)this.cache.controls.arcball=ZikoArcballControls(this);
+    //     ["orbit","trackball","map","firstPerson","pointerLock","fly"].forEach(n=>this.controls[n]?.disable(false));
+    //     this.controls.arcball.enable(false);
+    //     this.cache.currentCameraControls=this.cache.controls.arcball;
+    //     return this;
+    // }
+    // useFirstPersonControls(){
+    //     if(!this.cache.controls.firstPerson)this.cache.controls.firstPerson=ZikoFirstPersonControls(this);
+    //     ["orbit","trackball","map","fly","pointerLock","arcball"].forEach(n=>this.controls[n]?.disable(false));
+    //     this.controls.firstPerson.enable(false);
+    //     this.cache.currentCameraControls=this.cache.controls.firstPerson;
+    //     return this;
+    // }
     usePerspectiveCamera(){
         this.camera.usePerspective();
         return this;
