@@ -11,18 +11,26 @@ import {
     ZikoUICanvas,
     ZikoUIImage,
     ZikoUISvg,
-    ZikoUIVideo
+    ZikoUIVideo, 
+    ZikoUIElement
  } from "ziko";
 const useTexture=texture=>{
+    console.log(texture)
     if(texture instanceof Texture) return texture;
-    if(texture instanceof ZikoUIImage) return new TextureLoader().load(texture.element.src);
+    if(texture instanceof ZikoUIElement){
+        if(texture?.isImge) console.log(111111111111)
+    }
+    if(texture instanceof ZikoUIImage){
+        console.log(texture.element.src)
+        return new TextureLoader().load(texture.element.src);
+    } 
     if(texture instanceof ZikoUICanvas) return new CanvasTexture(texture.element);
     if(texture instanceof ZikoUIVideo) return new VideoTexture(texture.element);
     if(texture instanceof ZikoUISvg) return useTexture(new ZikoUIImage(texture.toImg()));
     if(texture instanceof HTMLImageElement) return new TextureLoader().load(texture.src);
     if(texture instanceof HTMLCanvasElement) return new CanvasTexture(texture);
     if(texture instanceof HTMLVideoElement) return new VideoTexture(texture);
-    throw new Error("Unsupported texture type");
+    // throw new Error("Unsupported texture type");
 }
 const isValidTexture=texture=>[
     Texture,

@@ -12,7 +12,7 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/zikogl.mjs",
+      "import": "./dist/ziko-gl.mjs",
       "require": "./dist/zikogl.cjs"
     }
   },
@@ -25,7 +25,8 @@
   "author": "zakaria elalaoui",
   "license": "MIT",
   "dependencies": {
-    "ziko": "^0.35.0"
+    "three": "^0.179.1",
+    "ziko": "^0.34.0"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.4",

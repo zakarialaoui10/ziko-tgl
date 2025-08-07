@@ -24,16 +24,19 @@ export default {
     //   },
     //   external: [ "ziko", "three" ],
     // },
-    // {
-    //   file: "dist/ziko-gl.mjs",
-    //   format: "es",
-    //   banner,
-    //   globals: {
-    //     ziko: "Ziko",
-    //     three : "Three"
-    //   },
-    //   external: [ "ziko", "three" ],
-    // },
+    {
+      file: "dist/ziko-gl.mjs",
+      format: "es",
+      banner,
+      globals: {
+        ziko: "Ziko",
+        // three : "Three"
+      },
+      external: [
+        "ziko", 
+        // "three" 
+      ],
+    },
     {
       file: "dist/ziko-gl-umd.js",
       format: "umd",

@@ -1,3 +1,10 @@
+export * from "./scene/index.js"
+export * from "./camera/index.js"
+export * from "./controls/index.js"
+export * from "./light/index.js"
+export * from "./loaders/index.js"
+export * from "./object-3d/index.js"
+export * from "./use/index.js"
 import * as THREE from "three"
 import { SceneGl } from "./scene/gl.js";
 import { SceneCss } from "./scene/css.js";
@@ -57,6 +64,7 @@ import {
     usePointerControls,
     useTransformControls
  } from "./controls/index.js";
+import { exp } from "three/src/nodes/TSL.js";
 const ZikoGl={
     THREE,
     ui3,
