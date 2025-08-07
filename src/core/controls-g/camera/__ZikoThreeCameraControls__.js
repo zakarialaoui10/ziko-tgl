@@ -1,4 +1,4 @@
-import { __ZikoThreeControls__ } from "../__ZikoThreeControls__";
+import { __ZikoThreeControls__ } from "../__ziko-three-controls__";
 import { 
     Quaternion,
     Vector3 

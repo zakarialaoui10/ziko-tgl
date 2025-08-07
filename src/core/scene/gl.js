@@ -32,26 +32,26 @@ class ZikoThreeSceneGl extends ZikoUIElement{
             type:"gl",
             currentCameraControls:null,
             controls:{
-                orbit:null,
-                trackball:null,
-                map:null,
-                fly:null,
-                firstPerson:null,
-                pointerLock:null,
-                arcball:null,
+                // orbit:null,
+                // trackball:null,
+                // map:null,
+                // fly:null,
+                // firstPerson:null,
+                // pointerLock:null,
+                // arcball:null,
                 transform:null,
                 drag:null,
                 ptr:null
             }
         })
-        this.canvas=html("canvas").render(this.element)
-        this.rendererGl=new WebGLRenderer({canvas:this.canvas.element});
-        this.rendererTarget=this.rendererGl;
-		this.sceneGl=new Scene();
-        this.camera=ZikoCamera(w,h,0.1,1000);
-        this.camera.currentCamera.position.z=10;
-        this.camera.parent=this;
-        this.sceneGl.background=new Color("#3333ee");
+        this.canvas = html("canvas").render(this.element)
+        this.rendererGl = new WebGLRenderer({canvas:this.canvas.element});
+        this.rendererTarget = this.rendererGl;
+		this.sceneGl = new Scene();
+        this.camera = ZikoCamera(w,h,0.1,1000);
+        this.camera.currentCamera.position.z = 10;
+        this.camera.parent = this;
+        this.sceneGl.background = new Color("#3333ee");
         this.renderGl()
         // this.render();
         this.size(w,h);

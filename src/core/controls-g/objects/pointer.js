@@ -1,40 +1,33 @@
-import { DragControls } from 'three/addons/controls/DragControls.js';
-import { __ZikoThreeObjectControls__ } from './__ZikoThreeObjectsControls__';
-
-class ZikoThreeDragControls extends __ZikoThreeObjectControls__{
+import { PointerControls } from './custom-controls/pointer-control';
+import { __ZikoThreeObjectControls__ } from './__ziko-three-objects-control__';
+class ZikoThreePointerControls extends __ZikoThreeObjectControls__{
     constructor(target,ZikoGlElements) {
         super(target);
         this.elements=ZikoGlElements;
         this.objects=this.elements.map(n=>n.element);
-        this.control = new DragControls(this.objects,target.camera.currentCamera, target.rendererTarget.domElement);
+        this.control = new PointerControls(this.objects,target.camera.currentCamera, target.rendererTarget.domElement);
         Object.assign(this.cache,{
             currentElement:null,
             savedStates: []
         })
     }
     init() {
-        this.control = new DragControls(objects,this.__TARGET__.camera.currentCamera, this.__TARGET__.rendererTarget.domElement);
+        this.control = new PointerControls(objects,this.__TARGET__.camera.currentCamera, this.__TARGET__.rendererTarget.domElement);
         return this;
     }
     get element(){
         return this.cache.currentElement;
     }
-    onStart(callback){
-        this.control.addEventListener("dragstart",(e)=>{
+    onClick(callback){
+        this.control.addEventListener("click",(e)=>{
             this.cache.currentElement=this.elements.find(n=>n.id===e.object.id);
             this.__TARGET__.currentCameraControls?.disable()
             if(callback)callback.call(this,this);
         })
         return this;
     }
-    onDrag(callback){
-        this.control.addEventListener("drag",(e)=>{
-           if(callback) callback.call(this,this);
-        })
-        return this;
-    }
-    onEnd(callback){
-        this.control.addEventListener("dragend",(e)=>{
+    onUp(callback){
+        this.control.addEventListener("pointerup",(e)=>{
             this.__TARGET__.currentCameraControls.enable();
             if(callback)callback.call(this,this);
         })
@@ -80,14 +73,14 @@ class ZikoThreeDragControls extends __ZikoThreeObjectControls__{
     return this;
     }
 }
-const ZikoDragControls = (target,objects) => new ZikoThreeDragControls(target,objects)
-const useDragControls = (objects)=>{
+const ZikoPointerControls = (target,objects) => new ZikoThreePointerControls(target,objects)
+const usePointerControls = (objects)=>{
     const SCENE = objects[0].parent;
-    const CTRL = ZikoDragControls(SCENE,objects);
+    const CTRL = ZikoPointerControls(SCENE,objects);
     SCENE.cache.controls.drag = CTRL;
     return CTRL;
 }
 export {
-    ZikoDragControls,
-    useDragControls
+    ZikoPointerControls,
+    usePointerControls
 }

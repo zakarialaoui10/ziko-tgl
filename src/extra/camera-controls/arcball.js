@@ -1,5 +1,5 @@
 import { ArcballControls } from 'three/addons/controls/ArcballControls.js';
-import { __ZikoThreeCameraControls__ } from './__ZikoThreeCameraControls__';
+import { __ZikoThreeCameraControls__ } from '../../core/controls-g/camera/__ZikoThreeCameraControls__';
 
 class ZikoThreeArcballControls extends __ZikoThreeCameraControls__{
     constructor(target) {
