@@ -1,5 +1,5 @@
 import { DragControls } from 'three/addons/controls/DragControls.js';
-import { __ZikoThreeObjectControls__ } from './__ziko-three-objects-control__';
+import { __ZikoThreeObjectControls__ } from './ziko-three-objects-control';
 
 class ZikoThreeDragControls extends __ZikoThreeObjectControls__{
     constructor(target,ZikoGlElements) {

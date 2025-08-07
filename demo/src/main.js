@@ -4,8 +4,9 @@ import {
   // useLightHelper
 } from "../../"
 
-globalThis.SCENE = SceneGl("100vw", "100vh").useShadow();
+import { ZikoThreeMapControls } from "ziko-gl/extra/camera-controls/map.js"
 
+globalThis.SCENE = SceneGl("100vw", "100vh").useShadow();
 globalThis.im1 = image("/im.png");
 im1.st.hide();
 const t1 = useTexture(im1);
@@ -25,3 +26,6 @@ SCENE.add(
   Floor, C1, C2, L, 
   // useLightHelper(L)
 );
+
+SCENE.useControl(ZikoThreeMapControls)
+// SCENE.useMapControls()

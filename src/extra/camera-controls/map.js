@@ -1,5 +1,5 @@
 import { MapControls } from 'three/addons/controls/MapControls.js';
-import { __ZikoThreeCameraControls__ } from './__ZikoThreeCameraControls__';
+import { __ZikoThreeCameraControls__ } from '../../core/controls/camera/ziko-three-camera-controls.js';
 class ZikoThreeMapControls extends __ZikoThreeCameraControls__{
     constructor(target) {
         super(target, "map")

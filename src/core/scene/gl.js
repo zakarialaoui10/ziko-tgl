@@ -16,13 +16,14 @@ import {
 import { waitElm } from "../utils/index.js";
 import { 
     ZikoThreeOrbitControls, 
-    ZikoThreeMapControls,
-    ZikoThreeFlyControls,
-    ZikoThreeTrackballControls,
-    ZikoThreeArcballControls,
-    ZikoThreeFirstPersonControls,
-    ZikoThreePointerLockControls
+    // ZikoThreeMapControls,
+    // ZikoThreeFlyControls,
+    // ZikoThreeTrackballControls,
+    // ZikoThreeArcballControls,
+    // ZikoThreeFirstPersonControls,
+    // ZikoThreePointerLockControls
 } from "../controls/index.js";
+import { ZikoThreeMapControls } from "../../extra/camera-controls/map.js";
 import { isValidTexture, useTexture } from "../loaders/texture.js";
 class ZikoThreeSceneGl extends ZikoUIElement{
     constructor(w,h){
@@ -32,13 +33,13 @@ class ZikoThreeSceneGl extends ZikoUIElement{
             type:"gl",
             currentCameraControls:null,
             controls:{
-                // orbit:null,
-                // trackball:null,
-                // map:null,
-                // fly:null,
-                // firstPerson:null,
-                // pointerLock:null,
-                // arcball:null,
+                orbit:null,
+                trackball:null,
+                map:null,
+                fly:null,
+                firstPerson:null,
+                pointerLock:null,
+                arcball:null,
                 transform:null,
                 drag:null,
                 ptr:null
@@ -256,24 +257,33 @@ class ZikoThreeSceneGl extends ZikoUIElement{
         this.cache.currentCameraControls=this.cache.controls.orbit;
         return this;
     }
-    useTrackballControls(){
-        return this.useControl(ZikoThreeTrackballControls)
-    }
+    // useTrackballControls(){
+    //     return this.useControl(ZikoThreeTrackballControls)
+    // }
+    // useMapControls(){
+    //     let restore=false;
+    //     if(!this.cache.controls.orbit)this.cache.controls.map = new ZikoThreeMapControls(this);
+    //     ["trackball","orbit","fly","firstPerson","pointerLock","arcball"].forEach(n=>this.controls[n]?.disable(restore));
+    //     this.controls.map.enable(false);
+    //     this.cache.currentCameraControls = this.cache.controls.map;
+    //     return this;
+    // }
     useMapControls(){
+        // console.log(101092)
         return this.useControl(ZikoThreeMapControls)
     }
-    useFlyControls(){
-        return this.useControl(ZikoThreeFlyControls)
-    }
-    usePointerLockControls(){
-        return this.useControl(ZikoThreePointerLockControls)
-    }
-    useArcballControls(){
-        return this.useControl(ZikoThreeArcballControls)
-    }
-    useFirstPersonControls(){
-        return this.useControl(ZikoThreeFirstPersonControls)
-    }
+    // useFlyControls(){
+    //     return this.useControl(ZikoThreeFlyControls)
+    // }
+    // usePointerLockControls(){
+    //     return this.useControl(ZikoThreePointerLockControls)
+    // }
+    // useArcballControls(){
+    //     return this.useControl(ZikoThreeArcballControls)
+    // }
+    // useFirstPersonControls(){
+    //     return this.useControl(ZikoThreeFirstPersonControls)
+    // }
     useControl(Control){
         const name = Control.name
         if(!this.cache.controls[name]) this.cache.controls[name] = new Control(this);
@@ -281,7 +291,12 @@ class ZikoThreeSceneGl extends ZikoUIElement{
         // Ptr Or Pointer
         [...new Set(names).difference(new Set(['transform', 'ptr']))].forEach(n=>this.controls[n]?.disable(false));
         this.controls[name].enable(false);
+        console.log(this.cache.controls[name])
+        Object.assign(this.cache,{
+            currentCameraControls : this.cache.controls[name]
+        })
         this.cache.currentCameraControls = this.cache.controls[name];
+
         return this
     }
     usePerspectiveCamera(){

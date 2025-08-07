@@ -1,5 +1,5 @@
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { __ZikoThreeCameraControls__ } from './__ZikoThreeCameraControls__';
+import { __ZikoThreeCameraControls__ } from './ziko-three-camera-controls';
 class ZikoThreeOrbitControls extends __ZikoThreeCameraControls__{
     constructor(target){
         super(target, "orbit")

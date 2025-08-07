@@ -1,5 +1,5 @@
 import { PointerControls } from './custom-controls/pointer-control';
-import { __ZikoThreeObjectControls__ } from './__ziko-three-objects-control__';
+import { __ZikoThreeObjectControls__ } from './ziko-three-objects-control';
 class ZikoThreePointerControls extends __ZikoThreeObjectControls__{
     constructor(target,ZikoGlElements) {
         super(target);

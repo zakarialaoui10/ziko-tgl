@@ -1,6 +1,6 @@
 import { TransformControls } from 'three/addons/controls/TransformControls.js';
 import { ZikoThreeLightHelper } from "../../object-3d/ZikoThreeHelper/index.js"
-import { __ZikoThreeObjectControls__ } from './__ziko-three-objects-control__.js';
+import { __ZikoThreeObjectControls__ } from './ziko-three-objects-control.js';
 import { ZikoThreeObject3D } from '../../object-3d/ZikoThreeObject3D.js';
 class ZikoThreeTransformControls extends __ZikoThreeObjectControls__{
     constructor(target){

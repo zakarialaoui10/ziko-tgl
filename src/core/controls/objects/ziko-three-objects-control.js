@@ -1,4 +1,4 @@
-import { __ZikoThreeControls__ } from "../__ziko-three-controls__";
+import { __ZikoThreeControls__ } from "../ziko-three-controls.js";
 
 class __ZikoThreeObjectControls__ extends __ZikoThreeControls__{
     constructor(target){

@@ -15,8 +15,11 @@
       "import": "./dist/ziko-gl.mjs",
       "require": "./dist/zikogl.cjs"
     },
-    "./extra/":{
-
+    "./extra/*":{
+      "import" : "./src/extra/*"
+    },
+    "./extra":{
+      "import" : "./src/extra/index.js"
     }
   },
   "keywords": [
