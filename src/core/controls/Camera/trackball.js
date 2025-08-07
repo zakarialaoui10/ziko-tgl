@@ -3,10 +3,13 @@ import { __ZikoThreeCameraControls__ } from './__ZikoThreeCameraControls__';
 
 class ZikoThreeTrackballControls extends __ZikoThreeCameraControls__{
     constructor(target) {
-        super(target)
+        super(target, "trackball")
         this.control = new TrackballControls(target.camera.currentCamera, target.rendererTarget.domElement);
         this.init(false)
         this.onChange();
+    }
+    static get name(){
+        return "trackball"
     }
     init() {
         this.control = new TrackballControls(this.__TARGET__.camera.currentCamera, this.__TARGET__.rendererTarget.domElement);
@@ -28,4 +31,7 @@ class ZikoThreeTrackballControls extends __ZikoThreeCameraControls__{
 }
 
 const ZikoTrackballControls = target => new ZikoThreeTrackballControls(target);
-export { ZikoTrackballControls }
+export { 
+    ZikoTrackballControls,
+    ZikoThreeTrackballControls
+}

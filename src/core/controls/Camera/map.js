@@ -2,9 +2,12 @@ import { MapControls } from 'three/addons/controls/MapControls.js';
 import { __ZikoThreeCameraControls__ } from './__ZikoThreeCameraControls__';
 class ZikoThreeMapControls extends __ZikoThreeCameraControls__{
     constructor(target) {
-        super(target)
+        super(target, "map")
         this.init()
         this.onChange();
+    }
+    static get name(){
+        return "map"
     }
     init() {
         this.control = new MapControls(this.__TARGET__.camera.currentCamera, this.__TARGET__.rendererTarget.domElement);
@@ -24,4 +27,7 @@ class ZikoThreeMapControls extends __ZikoThreeCameraControls__{
 }
 
 const ZikoMapControls = target => new ZikoThreeMapControls(target);
-export { ZikoMapControls };
+export { 
+    ZikoMapControls,
+    ZikoThreeMapControls
+ };

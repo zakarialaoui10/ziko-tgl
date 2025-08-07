@@ -4,7 +4,7 @@ import {
   // useLightHelper
 } from "../../"
 
-const SCENE = SceneGl("100vw", "100vh").useShadow();
+globalThis.SCENE = SceneGl("100vw", "100vh").useShadow();
 
 globalThis.im1 = image("/im.png");
 im1.st.hide();

@@ -3,9 +3,12 @@ import { __ZikoThreeCameraControls__ } from './__ZikoThreeCameraControls__';
 
 class ZikoThreeFirstPersonControls extends __ZikoThreeCameraControls__{
     constructor(target) {
-        super(target);
+        super(target, "firstperson");
         this.init()
         this.onChange();
+    }
+    static get name(){
+        return "firstperson"
     }
     init() {
         this.control = new FirstPersonControls(this.__TARGET__.camera.currentCamera, this.__TARGET__.rendererTarget.domElement);
@@ -27,4 +30,7 @@ class ZikoThreeFirstPersonControls extends __ZikoThreeCameraControls__{
 }
 
 const ZikoFirstPersonControls = target => new ZikoThreeFirstPersonControls(target);
-export { ZikoFirstPersonControls }
+export { 
+    ZikoFirstPersonControls,
+    ZikoThreeFirstPersonControls
+ }

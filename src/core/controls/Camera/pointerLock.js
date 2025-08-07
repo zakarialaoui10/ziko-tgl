@@ -3,9 +3,12 @@ import { __ZikoThreeCameraControls__ } from './__ZikoThreeCameraControls__';
 
 class ZikoThreePointerLockControls extends __ZikoThreeCameraControls__{
     constructor(target) {
-        super(target);
+        super(target, "pointerlock");
         this.init()
         this.onChange();
+    }
+    static get name(){
+        return "pointerlock"
     }
     init() {
         this.control = new PointerLockControls(this.__TARGET__.camera.currentCamera, this.__TARGET__.rendererTarget.domElement);
@@ -27,4 +30,7 @@ class ZikoThreePointerLockControls extends __ZikoThreeCameraControls__{
 }
 
 const ZikoPointerLockControls = target => new ZikoThreePointerLockControls(target);
-export { ZikoPointerLockControls }
+export { 
+    ZikoPointerLockControls,
+    ZikoThreePointerLockControls
+ }

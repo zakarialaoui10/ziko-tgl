@@ -3,9 +3,12 @@ import { __ZikoThreeCameraControls__ } from './__ZikoThreeCameraControls__';
 
 class ZikoThreeArcballControls extends __ZikoThreeCameraControls__{
     constructor(target) {
-        super(target);
+        super(target, "arcball");
         this.init()
         this.onChange();
+    }
+    static get name(){
+        return "arcball"
     }
     init() {
         this.control = new ArcballControls(this.__TARGET__.camera.currentCamera, this.__TARGET__.rendererTarget.domElement);
@@ -27,4 +30,7 @@ class ZikoThreeArcballControls extends __ZikoThreeCameraControls__{
 }
 
 const ZikoArcballControls = target => new ZikoThreeArcballControls(target);
-export { ZikoArcballControls }
+export { 
+    ZikoArcballControls,
+    ZikoThreeArcballControls
+ }

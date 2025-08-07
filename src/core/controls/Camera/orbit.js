@@ -2,9 +2,12 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { __ZikoThreeCameraControls__ } from './__ZikoThreeCameraControls__';
 class ZikoThreeOrbitControls extends __ZikoThreeCameraControls__{
     constructor(target){
-        super(target)
+        super(target, "orbit")
         this.init(false)
         this.onChange();
+    }
+    static get name(){
+        return "orbit"
     }
     init(){
         this.control=new OrbitControls(this.__TARGET__.camera.currentCamera,this.__TARGET__.rendererTarget.domElement);
@@ -23,4 +26,7 @@ class ZikoThreeOrbitControls extends __ZikoThreeCameraControls__{
     }
 }
 const ZikoOrbitControls=target=>new ZikoThreeOrbitControls(target);
-export {ZikoOrbitControls}
+export {
+    ZikoOrbitControls,
+    ZikoThreeOrbitControls
+}
