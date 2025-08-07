@@ -6,7 +6,7 @@ class ZikoThreePointerControls extends __ZikoThreeObjectControls__{
         this.elements=ZikoGlElements;
         this.objects=this.elements.map(n=>n.element);
         this.control = new PointerControls(this.objects,target.camera.currentCamera, target.rendererTarget.domElement);
-        Object.assign(this.__cache__,{
+        Object.assign(this.cache,{
             currentElement:null,
             savedStates: []
         })
@@ -16,11 +16,11 @@ class ZikoThreePointerControls extends __ZikoThreeObjectControls__{
         return this;
     }
     get element(){
-        return this.__cache__.currentElement;
+        return this.cache.currentElement;
     }
     onClick(callback){
         this.control.addEventListener("click",(e)=>{
-            this.__cache__.currentElement=this.elements.find(n=>n.id===e.object.id);
+            this.cache.currentElement=this.elements.find(n=>n.id===e.object.id);
             this.__TARGET__.currentCameraControls?.disable()
             if(callback)callback.call(this,this);
         })
@@ -35,20 +35,20 @@ class ZikoThreePointerControls extends __ZikoThreeObjectControls__{
     }
     onHoverOn(callback){
         this.control.addEventListener("hoveron",(e)=>{
-            this.__cache__.currentElement=this.elements.find(n=>n.id===e.object.id);
+            this.cache.currentElement=this.elements.find(n=>n.id===e.object.id);
             callback.call(this,this);
         })
         return this;
     }
     onHoverOff(callback){
         this.control.addEventListener("hoveroff",(e)=>{
-            this.__cache__.currentElement=this.elements.find(n=>n.id===e.object.id);
+            this.cache.currentElement=this.elements.find(n=>n.id===e.object.id);
             callback.call(this,this);
         })
         return this;
     }
     save() {
-        this.__cache__.savedStates = this.elements.map(n => {
+        this.cache.savedStates = this.elements.map(n => {
             return {
                 id: n.id,
                 position: n.element.position.clone(),
@@ -60,7 +60,7 @@ class ZikoThreePointerControls extends __ZikoThreeObjectControls__{
     }
 
     restore() {
-        this.__cache__.savedStates.forEach(state => {
+        this.cache.savedStates.forEach(state => {
             const element = this.elements.find(n => n.id === state.id);
             if (element) {
                 element.element.position.copy(state.position);

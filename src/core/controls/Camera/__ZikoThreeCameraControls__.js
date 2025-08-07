@@ -4,14 +4,14 @@ import {
     Vector3 
 } from "three";
 class __ZikoThreeCameraControls__ extends __ZikoThreeControls__{
-    constructor(target){
-        super(target)
-        this.__cache__={
+    constructor(target, name){
+        super(target, name)
+        Object.assign(this.cache, {
             saved_state:{
                 position:new Vector3(),
                 quaternion:new Quaternion()
-            }   
-        }
+            }        
+        })
     }
     get class(){
         return [
@@ -29,12 +29,12 @@ class __ZikoThreeCameraControls__ extends __ZikoThreeControls__{
         return state;
     }
     save(){
-        this.__cache__.saved_state.position.copy(this.__TARGET__.camera.currentCamera.position);
-        this.__cache__.saved_state.quaternion.copy(this.__TARGET__.camera.currentCamera.quaternion);
+        this.cache.saved_state.position.copy(this.__TARGET__.camera.currentCamera.position);
+        this.cache.saved_state.quaternion.copy(this.__TARGET__.camera.currentCamera.quaternion);
         return this;
     }
     restore(renderGl=false,renderCss=false){
-        this.useState(this.__cache__.saved_state,renderGl,renderCss)
+        this.useState(this.cache.saved_state,renderGl,renderCss)
         return this;
     }
     useState(state,renderGl=true,renderCss=true){

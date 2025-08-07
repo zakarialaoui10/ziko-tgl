@@ -24,7 +24,7 @@ class ZikoTHREECamera{
 		this.fov=50;
 		this.perspectiveDistance=10;
 		this.orthographicDistance=120;
-		this.__cache__={
+		this.cache={
 			saved_state:{
 				position:new Vector3(),
 				quaternion:new Quaternion()
@@ -36,12 +36,12 @@ class ZikoTHREECamera{
 		return this;
 	}
 	save(){
-        this.__cache__.saved_state.position.copy(this.currentCamera.position);
-        this.__cache__.saved_state.quaternion.copy(this.currentCamera.quaternion);
+        this.cache.saved_state.position.copy(this.currentCamera.position);
+        this.cache.saved_state.quaternion.copy(this.currentCamera.quaternion);
         return this;
     }
     restore(renderGl=false,renderCss=false){
-		this.useState(this.__cache__.saved_state,renderGl,renderCss)
+		this.useState(this.cache.saved_state,renderGl,renderCss)
         return this;
     }
 	#save_for_switch(){

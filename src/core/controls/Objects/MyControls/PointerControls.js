@@ -6,10 +6,10 @@ import {
     Vector3
 } from 'three';
 class PointerControls extends EventDispatcher {
-    #__cache__
+    #cache
     constructor(objects, camera, domElement) {
         super();
-        this.#__cache__={
+        this.#cache={
             plane : new Plane(),
             raycaster : new Raycaster(),
             pointer : new Vector2(),
@@ -53,68 +53,68 @@ class PointerControls extends EventDispatcher {
     #onPointerMove(event) {
         if (this.enabled === false) return;
         this.#updatePointer(event);
-        this.#__cache__.raycaster.setFromCamera(this.#__cache__.pointer, this.camera);
-        if(!this.#__cache__.selected) {
+        this.#cache.raycaster.setFromCamera(this.#cache.pointer, this.camera);
+        if(!this.#cache.selected) {
             if (event.pointerType === 'mouse' || event.pointerType === 'pen') {
-                this.#__cache__.intersections.length = 0;
-                this.#__cache__.raycaster.setFromCamera(this.#__cache__.pointer, this.camera);
-                this.#__cache__.raycaster.intersectObjects(this.objects, this.recursive, this.#__cache__.intersections);
-                if (this.#__cache__.intersections.length > 0) {
-                    const object = this.#__cache__.intersections[0].object;
-                    this.#__cache__.plane.setFromNormalAndCoplanarPoint(
-                        this.camera.getWorldDirection(this.#__cache__.plane.normal),
-                        this.#__cache__.worldPosition.setFromMatrixPosition(object.matrixWorld)
+                this.#cache.intersections.length = 0;
+                this.#cache.raycaster.setFromCamera(this.#cache.pointer, this.camera);
+                this.#cache.raycaster.intersectObjects(this.objects, this.recursive, this.#cache.intersections);
+                if (this.#cache.intersections.length > 0) {
+                    const object = this.#cache.intersections[0].object;
+                    this.#cache.plane.setFromNormalAndCoplanarPoint(
+                        this.camera.getWorldDirection(this.#cache.plane.normal),
+                        this.#cache.worldPosition.setFromMatrixPosition(object.matrixWorld)
                     );
-                    if (this.#__cache__.hovered !== object && this.#__cache__.hovered !== null) {
-                        this.dispatchEvent({ type: 'hoveroff', object: this.#__cache__.hovered });
+                    if (this.#cache.hovered !== object && this.#cache.hovered !== null) {
+                        this.dispatchEvent({ type: 'hoveroff', object: this.#cache.hovered });
                         this.domElement.style.cursor = 'auto';
-                        this.#__cache__.hovered = null;
+                        this.#cache.hovered = null;
                     }
-                    if (this.#__cache__.hovered !== object) {
+                    if (this.#cache.hovered !== object) {
                         this.dispatchEvent({ type: 'hoveron', object: object });
                         this.domElement.style.cursor = 'pointer';
-                        this.#__cache__.hovered = object;
+                        this.#cache.hovered = object;
                     }
                 } else {
-                    if (this.#__cache__.hovered !== null) {
-                        this.dispatchEvent({ type: 'hoveroff', object: this.#__cache__.hovered });
+                    if (this.#cache.hovered !== null) {
+                        this.dispatchEvent({ type: 'hoveroff', object: this.#cache.hovered });
                         this.domElement.style.cursor = 'auto';
-                        this.#__cache__.hovered = null;
+                        this.#cache.hovered = null;
                     }
                 }
             }
         }
-        this.#__cache__.previousPointer.copy(this.#__cache__.pointer);
+        this.#cache.previousPointer.copy(this.#cache.pointer);
     }
     #onPointerDown(event) {
         if (this.enabled === false) return;
         this.#updatePointer(event);
-        this.#__cache__.intersections.length = 0;
-        this.#__cache__.raycaster.setFromCamera(this.#__cache__.pointer, this.camera);
-        this.#__cache__.raycaster.intersectObjects(this.objects, this.recursive, this.#__cache__.intersections);
-        if (this.#__cache__.intersections.length > 0) {
+        this.#cache.intersections.length = 0;
+        this.#cache.raycaster.setFromCamera(this.#cache.pointer, this.camera);
+        this.#cache.raycaster.intersectObjects(this.objects, this.recursive, this.#cache.intersections);
+        if (this.#cache.intersections.length > 0) {
             if (this.transformGroup === true) {
-                this.#__cache__.selected = this.#findGroup(this.#__cache__.intersections[0].object);
+                this.#cache.selected = this.#findGroup(this.#cache.intersections[0].object);
             } else {
-                this.#__cache__.selected = this.#__cache__.intersections[0].object;
+                this.#cache.selected = this.#cache.intersections[0].object;
             }
             this.domElement.style.cursor = 'move';
-            this.dispatchEvent({ type: 'click', object: this.#__cache__.selected });
+            this.dispatchEvent({ type: 'click', object: this.#cache.selected });
         }
-        this.#__cache__.previousPointer.copy(this.#__cache__.pointer);
+        this.#cache.previousPointer.copy(this.#cache.pointer);
     }
     #onPointerCancel() {
         if (this.enabled === false) return;
-        if (this.#__cache__.selected) {
-            this.dispatchEvent({ type: 'pointerup', object: this.#__cache__.selected });
-            this.#__cache__.selected = null;
+        if (this.#cache.selected) {
+            this.dispatchEvent({ type: 'pointerup', object: this.#cache.selected });
+            this.#cache.selected = null;
         }
-        this.domElement.style.cursor = this.#__cache__.hovered ? 'pointer' : 'auto';
+        this.domElement.style.cursor = this.#cache.hovered ? 'pointer' : 'auto';
     }
     #updatePointer(event) {
         const rect = this.domElement.getBoundingClientRect();
-        this.#__cache__.pointer.x = (event.clientX - rect.left) / rect.width * 2 - 1;
-        this.#__cache__.pointer.y = - (event.clientY - rect.top) / rect.height * 2 + 1;
+        this.#cache.pointer.x = (event.clientX - rect.left) / rect.width * 2 - 1;
+        this.#cache.pointer.y = - (event.clientY - rect.top) / rect.height * 2 + 1;
     }
     #findGroup(obj, group = null) {
         if (obj.isGroup) group = obj;

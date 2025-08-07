@@ -1,7 +1,13 @@
 class __ZikoThreeControls__{
-    constructor(target){
+    constructor(target, name){
         this.__TARGET__=target;
         this.isPaused=false;
+        this.cache = {
+            name 
+        }
+    }
+    get name(){
+        return this.cache.name
     }
     get type(){
         return "controls";
