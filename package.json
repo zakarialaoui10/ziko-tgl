@@ -1,6 +1,6 @@
 {
   "name": "ziko-gl",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "",
   "main": "src/index.js",
   "type": "module",
@@ -15,11 +15,11 @@
       "import": "./dist/ziko-gl.mjs",
       "require": "./dist/zikogl.cjs"
     },
-    "./extra/*":{
-      "import" : "./src/extra/*"
+    "./extra/*": {
+      "import": "./src/extra/*"
     },
-    "./extra":{
-      "import" : "./src/extra/index.js"
+    "./extra": {
+      "import": "./src/extra/index.js"
     }
   },
   "keywords": [
@@ -38,7 +38,7 @@
   "license": "MIT",
   "dependencies": {
     "three": "^0.179.1",
-    "ziko": "^0.34.0"
+    "ziko": "^0.37.0"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.4",
