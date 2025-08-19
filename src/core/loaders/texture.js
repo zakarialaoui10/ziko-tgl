@@ -7,26 +7,20 @@ import {
 // import {
 //     LottieLoader
 // } from "three/examples/jsm/Addons.js";
-import { 
-    ZikoUICanvas,
-    ZikoUIImage,
-    ZikoUISvg,
-    ZikoUIVideo, 
-    ZikoUIElement
- } from "ziko";
+import { UIElement } from "ziko";
 const useTexture=texture=>{
     console.log(texture)
     if(texture instanceof Texture) return texture;
-    if(texture instanceof ZikoUIElement){
-        if(texture?.isImge) console.log(111111111111)
-    }
-    if(texture instanceof ZikoUIImage){
+    if(texture instanceof UIElement){
+        if(texture.element.tagName.toLowerCase() === 'img'){
         console.log(texture.element.src)
-        return new TextureLoader().load(texture.element.src);
-    } 
-    if(texture instanceof ZikoUICanvas) return new CanvasTexture(texture.element);
-    if(texture instanceof ZikoUIVideo) return new VideoTexture(texture.element);
-    if(texture instanceof ZikoUISvg) return useTexture(new ZikoUIImage(texture.toImg()));
+            return new TextureLoader().load(texture.element.src);
+        }
+        if(texture.element.tagName.toLowerCase() === 'canvas') return new CanvasTexture(texture.element);
+        if(texture.element.tagName.toLowerCase() === 'video') return new VideoTexture(texture.element);
+        if(texture.element.tagName.toLowerCase() === 'svg') return useTexture(new ZikoUIImage(texture.toImg()));
+    }
+    
     if(texture instanceof HTMLImageElement) return new TextureLoader().load(texture.src);
     if(texture instanceof HTMLCanvasElement) return new CanvasTexture(texture);
     if(texture instanceof HTMLVideoElement) return new VideoTexture(texture);
@@ -34,10 +28,10 @@ const useTexture=texture=>{
 }
 const isValidTexture=texture=>[
     Texture,
-    ZikoUIImage,
-    ZikoUICanvas,
-    ZikoUIVideo,
-    ZikoUISvg,
+    // ZikoUIImage,
+    // ZikoUICanvas,
+    // ZikoUIVideo,
+    // ZikoUISvg,
     HTMLImageElement,
     HTMLVideoElement,
     HTMLCanvasElement
@@ -47,7 +41,7 @@ export {
     useTexture
 }
 
-// if(value instanceof ZikoUIElement){
+// if(value instanceof UIElement){
 //     if(value instanceof ZikoUIImage){}
 //     if(value instanceof ZikoUISvg){}
 //     if(value instanceof ZikoUICanvas){}

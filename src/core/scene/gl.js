@@ -1,4 +1,4 @@
-import { ZikoUIElement, html } from "ziko";
+import { UIElement, tags } from "ziko";
 import {
     WebGLRenderer, 
     Scene,
@@ -25,9 +25,9 @@ import {
 } from "../controls/index.js";
 import { ZikoThreeMapControls } from "../../extra/camera-controls/map.js";
 import { isValidTexture, useTexture } from "../loaders/texture.js";
-class ZikoThreeSceneGl extends ZikoUIElement{
+class TGLScene extends UIElement{
     constructor(w,h){
-        super("figure","figure")
+        super({element : "figure", name : "figure"})
         Object.assign(this.cache,{
             args:[w,h],
             type:"gl",
@@ -45,7 +45,7 @@ class ZikoThreeSceneGl extends ZikoUIElement{
                 ptr:null
             }
         })
-        this.canvas = html("canvas").render(this.element)
+        this.canvas = tags.canvas().render(this.element)
         this.rendererGl = new WebGLRenderer({canvas:this.canvas.element});
         this.rendererTarget = this.rendererGl;
 		this.sceneGl = new Scene();
@@ -308,8 +308,8 @@ class ZikoThreeSceneGl extends ZikoUIElement{
         return this;
     }
 }
-const SceneGl=(w,h)=>new ZikoThreeSceneGl(w,h)
+const SceneGl=(w,h)=>new TGLScene(w,h)
 export {
-    ZikoThreeSceneGl,
+    TGLScene,
     SceneGl
 }

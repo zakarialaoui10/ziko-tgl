@@ -1,5 +1,5 @@
-The `SceneGl` element is the root of your `ZikoGl` scene and is an instance of [ZikoUIElement](). 
-It acts as the foundational container for all 3D components in your scene, including objects, lights, and cameras. As a ZikoUIElement, it inherits properties and methods that allow it to interact seamlessly within the `Ziko.js` framework. By adding other elements to the SceneGl, you build up the scene that will be rendered and displayed.
+The `SceneGl` element is the root of your `ZikoGl` scene and is an instance of [UIElement](). 
+It acts as the foundational container for all 3D components in your scene, including objects, lights, and cameras. As a UIElement, it inherits properties and methods that allow it to interact seamlessly within the `Ziko.js` framework. By adding other elements to the SceneGl, you build up the scene that will be rendered and displayed.
 
 ## Overview 
 ```js
@@ -73,7 +73,7 @@ You can switch between the two supported camers in `zikogl` using the following 
 
  ## Inherited Methodes
 
- The SceneGl element inherits methods from ZikoUIElement, which allow for effective manipulation and interaction with the elements within the scene. Here’s a closer look at these inherited methods:
+ The SceneGl element inherits methods from UIElement, which allow for effective manipulation and interaction with the elements within the scene. Here’s a closer look at these inherited methods:
 
   ### Object Manipulation 
 

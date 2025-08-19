@@ -38,7 +38,7 @@
   "license": "MIT",
   "dependencies": {
     "three": "^0.179.1",
-    "ziko": "^0.37.0"
+    "ziko": "^0.40.0"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.4",

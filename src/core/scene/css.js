@@ -1,10 +1,10 @@
-import { ZikoUIElement } from "ziko";
+import { UIElement } from "ziko";
 import * as THREE from "three"
 import { CSS3DRenderer } from 'three/addons/renderers/CSS3DRenderer.js';
-import { ZikoThreeSceneGl } from "./gl";
+import { TGLScene } from "./gl.js";
 import { ui3 } from "../object-3d/index"
-import { ZikoThreeObject3D } from "../object-3d/ZikoThreeObject3D";
-class ZikoThreeSceneCss extends ZikoThreeSceneGl{
+import { ZikoThreeObject3D } from "../object-3d/ZikoThreeObject3D.js";
+class TGLSceneCss extends TGLScene{
     constructor(w,h){
         super(w,h)
         this.sceneCss=new THREE.Scene();
@@ -39,7 +39,7 @@ class ZikoThreeSceneCss extends ZikoThreeSceneGl{
     add(...obj){
         let rerenderGl=false;
         let rerenderCss=false;
-        obj=obj.map(n=>n instanceof ZikoUIElement? ui3 (n):n)
+        obj=obj.map(n=>n instanceof UIElement? ui3 (n):n)
 		obj.map(n=>{
 			if(n instanceof ZikoThreeObject3D){
                 if(n.cache.type==="gl"){
@@ -81,8 +81,8 @@ class ZikoThreeSceneCss extends ZikoThreeSceneGl{
     }
 }
 
-const SceneCss=(w,h)=>new ZikoThreeSceneCss(w,h)
+const SceneCss=(w,h)=>new TGLSceneCss(w,h)
 export{
-    ZikoThreeSceneCss,
+    TGLSceneCss,
     SceneCss
 }
