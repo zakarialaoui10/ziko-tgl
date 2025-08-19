@@ -1,6 +1,6 @@
 {
-  "name": "ziko-gl",
-  "version": "0.6.2",
+  "name": "ziko-tgl",
+  "version": "0.1.0",
   "description": "",
   "main": "src/index.js",
   "type": "module",
@@ -12,8 +12,8 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/ziko-gl.mjs",
-      "require": "./dist/zikogl.cjs"
+      "import": "./dist/ziko-tgl.mjs",
+      "require": "./dist/ziko-tgl.cjs"
     },
     "./extra/*": {
       "import": "./src/extra/*"

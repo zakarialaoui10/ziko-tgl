@@ -3,7 +3,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import terser from "@rollup/plugin-terser";
 const banner = `
 /*
-  Project: ziko-gl
+  Project: ziko-tgl
   Author: Zakaria Elalaoui
   Date : ${new Date()}
   Git-Repo : https://github.com/zakarialaoui10/ziko.js
@@ -15,7 +15,7 @@ export default {
   input: "src/core/index.js",
   output: [
     // {
-    //   file: "dist/ziko-gl.cjs",
+    //   file: "dist/ziko-tgl.cjs",
     //   format: "cjs",
     //   banner,
     //   globals: {
@@ -25,7 +25,7 @@ export default {
     //   external: [ "ziko", "three" ],
     // },
     {
-      file: "dist/ziko-gl.mjs",
+      file: "dist/ziko-tgl.mjs",
       format: "es",
       banner,
       globals: {
@@ -38,10 +38,10 @@ export default {
       ],
     },
     {
-      file: "dist/ziko-gl-umd.js",
+      file: "dist/ziko-tgl-umd.js",
       format: "umd",
       banner,
-      name: "ZikoGl",
+      name: "ZikoTGl",
       globals: {
         ziko: "Ziko",
       },
