@@ -1,7 +1,7 @@
 import { TransformControls } from 'three/addons/controls/TransformControls.js';
 import { ZikoThreeLightHelper } from "../../object-3d/ZikoThreeHelper/index.js"
 import { __ZikoThreeObjectControls__ } from './ziko-three-objects-control.js';
-import { ZikoThreeObject3D } from '../../object-3d/ZikoThreeObject3D.js';
+import { TglObject3D } from '../../object-3d/tgl-object3d.js';
 class ZikoThreeTransformControls extends __ZikoThreeObjectControls__{
     constructor(target){
         super(target)
@@ -84,7 +84,7 @@ class ZikoThreeTransformControls extends __ZikoThreeObjectControls__{
 
 const ZikoTransformControls=target=>new ZikoThreeTransformControls(target);
 const useTransformControls=(child,mode)=>{
-    if(child instanceof ZikoThreeObject3D)return new ZikoThreeTransformControls(child.parent).attach(child).setMode(mode);
+    if(child instanceof TglObject3D)return new ZikoThreeTransformControls(child.parent).attach(child).setMode(mode);
     return new ZikoThreeTransformControls(child).setMode(mode)
     
 }

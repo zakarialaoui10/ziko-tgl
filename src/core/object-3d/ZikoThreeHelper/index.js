@@ -14,8 +14,8 @@ import {
     SpotLightHelper,
     PointLightHelper,
  } from "three";
-import { ZikoThreeObject3D } from "../ZikoThreeObject3D";
-class ZikoThreeHelper extends ZikoThreeObject3D{
+import { TglObject3D } from "../tgl-object3d";
+class ZikoThreeHelper extends TglObject3D{
     constructor(){
         super()
     }

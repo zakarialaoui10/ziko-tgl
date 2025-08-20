@@ -1,9 +1,9 @@
-import { __ZikoThreeControls__ } from "../ziko-three-controls";
+import { __TGLControls__ } from "../tgl-controls";
 import { 
     Quaternion,
     Vector3 
 } from "three";
-class __ZikoThreeCameraControls__ extends __ZikoThreeControls__{
+class __ZikoThreeCameraControls__ extends __TGLControls__{
     constructor(target, name){
         super(target, name)
         Object.assign(this.cache, {

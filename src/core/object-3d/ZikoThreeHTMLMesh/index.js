@@ -1,6 +1,6 @@
 import { HTMLMesh } from 'three/examples/jsm/Addons.js';
-import { ZikoThreeObject3D } from '../ZikoThreeObject3D';
-class ZikoThreHTMLMesh extends ZikoThreeObject3D{
+import { TglObject3D } from '../tgl-object3d';
+class ZikoThreHTMLMesh extends TglObject3D{
     constructor(UIElement){
         super()
         this.cache={

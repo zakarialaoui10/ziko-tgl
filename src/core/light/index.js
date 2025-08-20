@@ -1,4 +1,4 @@
-import { ZikoThreeObject3D } from "../object-3d/ZikoThreeObject3D.js";
+import { TglObject3D } from "../object-3d/tgl-object3d.js";
 import { 
     AmbientLight, 
     DirectionalLight, 
@@ -8,7 +8,7 @@ import {
     SpotLight 
 } from "three/src/Three.js";
 
-class ZikoThreeLight extends ZikoThreeObject3D {
+class TglLight extends TglObject3D {
     constructor() {
         super();
     }
@@ -35,7 +35,7 @@ class ZikoThreeLight extends ZikoThreeObject3D {
     }
 }
 
-class ZikoThreeAmbientLight extends ZikoThreeLight {
+class TglAmbientLight extends TglLight {
     constructor(color = 0xffffff, intensity = 1) {
         super();
         Object.assign(this.cache,{
@@ -45,7 +45,7 @@ class ZikoThreeAmbientLight extends ZikoThreeLight {
     }
 }
 
-class ZikoThreeDirectionalLight extends ZikoThreeLight {
+class TglDirectionalLight extends TglLight {
     constructor(color = 0xffffff, intensity = 1) {
         super();
         Object.assign(this.cache,{
@@ -55,14 +55,14 @@ class ZikoThreeDirectionalLight extends ZikoThreeLight {
     }
 }
 
-class ZikoThreeHemisphereLight extends ZikoThreeLight {
+class TglHemisphereLight extends TglLight {
     constructor(skyColor = 0xffffbb, groundColor = 0x080820, intensity = 1) {
         super();
         this.element = new HemisphereLight(skyColor, groundColor, intensity);
     }
 }
 
-class ZikoThreePointLight extends ZikoThreeLight {
+class TglPointLight extends TglLight {
     constructor(color = 0xffffff, intensity = 1, distance = 0, decay = 1) {
         super();
         Object.assign(this.cache,{
@@ -72,7 +72,7 @@ class ZikoThreePointLight extends ZikoThreeLight {
     }
 }
 
-class ZikoThreeRectAreaLight extends ZikoThreeLight {
+class TglRectAreaLight extends TglLight {
     constructor(color = 0xffffff, intensity = 1, width = 10, height = 10) {
         super();
         Object.assign(this.cache,{
@@ -82,7 +82,7 @@ class ZikoThreeRectAreaLight extends ZikoThreeLight {
     }
 }
 
-class ZikoThreeSpotLight extends ZikoThreeLight {
+class TglSpotLight extends TglLight {
     constructor(color = 0xffffff, intensity = 1, distance = 0, angle = Math.PI / 3, penumbra = 0, decay = 1) {
         super();
         Object.assign(this.cache,{
@@ -92,12 +92,12 @@ class ZikoThreeSpotLight extends ZikoThreeLight {
     }
 }
 
-const useAmbientLight = (color, intensity) => new ZikoThreeAmbientLight(color, intensity);
-const useDirectionalLight = (color, intensity) => new ZikoThreeDirectionalLight(color, intensity);
-const useHemisphereLight = (skyColor, groundColor, intensity) => new ZikoThreeHemisphereLight(skyColor, groundColor, intensity);
-const usePointLight = (color, intensity, distance, decay) => new ZikoThreePointLight(color, intensity, distance, decay);
-const useRectAreaLight = (color, intensity, width, height) => new ZikoThreeRectAreaLight(color, intensity, width, height);
-const useSpotLight = (color, intensity, distance, angle, penumbra, decay) => new ZikoThreeSpotLight(color, intensity, distance, angle, penumbra, decay);
+const useAmbientLight = (color, intensity) => new TglAmbientLight(color, intensity);
+const useDirectionalLight = (color, intensity) => new TglDirectionalLight(color, intensity);
+const useHemisphereLight = (skyColor, groundColor, intensity) => new TglHemisphereLight(skyColor, groundColor, intensity);
+const usePointLight = (color, intensity, distance, decay) => new TglPointLight(color, intensity, distance, decay);
+const useRectAreaLight = (color, intensity, width, height) => new TglRectAreaLight(color, intensity, width, height);
+const useSpotLight = (color, intensity, distance, angle, penumbra, decay) => new TglSpotLight(color, intensity, distance, angle, penumbra, decay);
 
 export {
     useAmbientLight,

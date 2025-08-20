@@ -3,7 +3,7 @@ import * as THREE from "three"
 import { CSS3DRenderer } from 'three/addons/renderers/CSS3DRenderer.js';
 import { TGLScene } from "./gl.js";
 import { ui3 } from "../object-3d/index"
-import { ZikoThreeObject3D } from "../object-3d/ZikoThreeObject3D.js";
+import { TglObject3D } from "../object-3d/tgl-object3d.js";
 class TGLSceneCss extends TGLScene{
     constructor(w,h){
         super(w,h)
@@ -41,7 +41,7 @@ class TGLSceneCss extends TGLScene{
         let rerenderCss=false;
         obj=obj.map(n=>n instanceof UIElement? ui3 (n):n)
 		obj.map(n=>{
-			if(n instanceof ZikoThreeObject3D){
+			if(n instanceof TglObject3D){
                 if(n.cache.type==="gl"){
                     this.sceneGl.add(n.element);
                     rerenderGl=true;

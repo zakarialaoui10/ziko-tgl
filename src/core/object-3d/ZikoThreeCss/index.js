@@ -1,6 +1,6 @@
 import { CSS3DObject } from 'three/addons/renderers/CSS3DRenderer.js';
-import { ZikoThreeObject3D } from '../ZikoThreeObject3D';
-class ZikoThreeCss extends ZikoThreeObject3D{
+import { TglObject3D } from '../tgl-object3d';
+class ZikoThreeCss extends TglObject3D{
     constructor(UIElement){
         super()
         this.cache={

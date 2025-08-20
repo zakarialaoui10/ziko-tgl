@@ -1,11 +1,11 @@
-import { ZikoThreeObject3D } from "../ZikoThreeObject3D";
+import { TglObject3D } from "../tgl-object3d.js";
 import { 
     WireframeGeometry,
     LineSegments,
     LineBasicMaterial
  } from "three";
 import { ZikoThreeMesh } from "./ZikoThreeMesh.js";
-class ZikoThreeWireframe extends ZikoThreeObject3D{
+class ZikoThreeWireframe extends TglObject3D{
     constructor(ZikoMesh){
         super()
         if(ZikoMesh instanceof ZikoThreeMesh){

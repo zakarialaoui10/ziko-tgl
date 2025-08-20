@@ -1,4 +1,4 @@
-class ZikoThreeObject3D{
+class TglObject3D{
     constructor(){
         this.parent=null;
         this.cache={
@@ -179,5 +179,5 @@ class ZikoThreeObject3D{
     }
 }
 export {
-    ZikoThreeObject3D,
+    TglObject3D,
 }

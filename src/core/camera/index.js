@@ -6,7 +6,7 @@ import {
 	Quaternion,
 	MathUtils
 } from "three";
-class ZikoTHREECamera{
+class TglCamera{
 	#PERSPECTIVE_CAMERA
 	#ORTHOGRAPHIC_CAMERA
 	#SWITCH_STATE={
@@ -175,4 +175,4 @@ class ZikoTHREECamera{
 	}
 }
 
-export const ZikoCamera=(w,h,n,f)=>new ZikoTHREECamera(w,h,n,f);
+export const camera=(w,h,n,f)=>new TglCamera(w,h,n,f);

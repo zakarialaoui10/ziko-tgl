@@ -1,14 +1,14 @@
-import {image, PI} from "ziko"
+import {tags, PI} from "ziko"
 import {
   SceneGl, useTexture, plane3, cube3, useDirectionalLight, 
   // useLightHelper
-} from "../../"
+} from "ziko-tgl"
 
-import { ZikoThreeMapControls } from "ziko-gl/extra/camera-controls/map.js"
+import { ZikoThreeMapControls } from "ziko-tgl/extra/camera-controls/map.js"
 
 globalThis.SCENE = SceneGl("100vw", "100vh").useShadow();
-globalThis.im1 = image("/im.png");
-im1.st.hide();
+globalThis.im1 = tags.img({src : "/im.png"});
+// im1.st.hide();
 const t1 = useTexture(im1);
 
 const Floor = plane3(10, 10)

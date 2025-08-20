@@ -1,4 +1,4 @@
-class __ZikoThreeControls__{
+class __TGLControls__{
     constructor(target, name){
         this.__TARGET__=target;
         this.isPaused=false;
@@ -65,5 +65,5 @@ class __ZikoThreeControls__{
     }
 }
 export {
-    __ZikoThreeControls__
+    __TGLControls__
 }

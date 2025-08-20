@@ -9,10 +9,10 @@ import {
     Fog,
     FogExp2
  } from "three";
-import { ZikoCamera } from "../camera/index.js";
+import { camera } from "../camera/index.js";
 import { 
-    ZikoThreeObject3D,
- } from "../object-3d/ZikoThreeObject3D.js";
+    TglObject3D,
+ } from "../object-3d/tgl-object3d.js";
 import { waitElm } from "../utils/index.js";
 import { 
     ZikoThreeOrbitControls, 
@@ -49,7 +49,7 @@ class TGLScene extends UIElement{
         this.rendererGl = new WebGLRenderer({canvas:this.canvas.element});
         this.rendererTarget = this.rendererGl;
 		this.sceneGl = new Scene();
-        this.camera = ZikoCamera(w,h,0.1,1000);
+        this.camera = camera(w,h,0.1,1000);
         this.camera.currentCamera.position.z = 10;
         this.camera.parent = this;
         this.sceneGl.background = new Color("#3333ee");
@@ -113,7 +113,7 @@ class TGLScene extends UIElement{
 	}
     add(...obj){
 		obj.map((n,i)=>{
-			if(n instanceof ZikoThreeObject3D){
+			if(n instanceof TglObject3D){
 				this.sceneGl.add(obj[i].element);
 				this.items.push(obj[i]);
 				n.parent=this;
