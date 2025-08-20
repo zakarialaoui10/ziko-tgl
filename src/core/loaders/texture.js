@@ -7,23 +7,26 @@ import {
 // import {
 //     LottieLoader
 // } from "three/examples/jsm/Addons.js";
-import { UIElement } from "ziko";
-const useTexture=texture=>{
-    console.log(texture)
+import { UIElement, tags } from "ziko";
+const useTexture = texture =>{
     if(texture instanceof Texture) return texture;
     if(texture instanceof UIElement){
-        if(texture.element.tagName.toLowerCase() === 'img'){
-        console.log(texture.element.src)
-            return new TextureLoader().load(texture.element.src);
+        const element = texture.element;
+        switch(element.tagName.toLowerCase()){
+            case 'img' : return new TextureLoader().load(element.src);
+            case 'canvas' : return new CanvasTexture(element);
+            case 'video' : return new VideoTexture(element);
+            case 'svg' : return useTexture( tags.img({src :texture.toImg()}))
         }
-        if(texture.element.tagName.toLowerCase() === 'canvas') return new CanvasTexture(texture.element);
-        if(texture.element.tagName.toLowerCase() === 'video') return new VideoTexture(texture.element);
-        if(texture.element.tagName.toLowerCase() === 'svg') return useTexture(new ZikoUIImage(texture.toImg()));
     }
-    
-    if(texture instanceof HTMLImageElement) return new TextureLoader().load(texture.src);
-    if(texture instanceof HTMLCanvasElement) return new CanvasTexture(texture);
-    if(texture instanceof HTMLVideoElement) return new VideoTexture(texture);
+    if(texture instanceof HTMLElement || texture instanceof SVGAElement){
+        switch(texture.tagName.toLowerCase()){
+            case 'img' : return new TextureLoader().load(texture.src);
+            case 'canvas' : return new CanvasTexture(texture);
+            case 'video' : return new VideoTexture(texture);
+            // case 'svg' : return useTexture( tags.img({src :texture.toImg()}))
+        }
+    }
     // throw new Error("Unsupported texture type");
 }
 const isValidTexture=texture=>[

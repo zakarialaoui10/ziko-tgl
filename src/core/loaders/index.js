@@ -1,3 +1,1 @@
-export{
-    loadSVG
-} from "./svg"
+export * from './svg.js'
