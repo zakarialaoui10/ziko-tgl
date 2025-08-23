@@ -4,7 +4,7 @@ import {
   // useLightHelper
 } from "ziko-tgl"
 
-import { ZikoThreeMapControls } from "ziko-tgl/extra/camera-controls/map.js"
+import { TGLMapControl } from "ziko-tgl/extra/camera-controls/map.js"
 
 globalThis.SCENE = SceneGl("100vw", "100vh").useShadow();
 globalThis.im1 = tags.img({src : "/im.png"});
@@ -27,5 +27,5 @@ SCENE.add(
   // useLightHelper(L)
 );
 
-SCENE.useControl(ZikoThreeMapControls)
+SCENE.useControl(TGLMapControl)
 // SCENE.useMapControls()

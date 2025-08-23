@@ -1,7 +1,7 @@
 import { PointerLockControls } from 'three/addons/controls/PointerLockControls.js';
 import { __ZikoThreeCameraControls__ } from './__ZikoThreeCameraControls__';
 
-class ZikoThreePointerLockControls extends __ZikoThreeCameraControls__{
+class TGLPointerLockControl extends __ZikoThreeCameraControls__{
     constructor(target) {
         super(target, "pointerlock");
         this.init()
@@ -29,8 +29,8 @@ class ZikoThreePointerLockControls extends __ZikoThreeCameraControls__{
     }
 }
 
-const ZikoPointerLockControls = target => new ZikoThreePointerLockControls(target);
+const ptr_lock_ctrl = target => new TGLPointerLockControl(target);
 export { 
-    ZikoPointerLockControls,
-    ZikoThreePointerLockControls
+    ptr_lock_ctrl,
+    TGLPointerLockControl
  }

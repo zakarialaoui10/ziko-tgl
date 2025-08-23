@@ -1,7 +1,7 @@
 import { TrackballControls } from 'three/addons/controls/TrackballControls.js';
 import { __ZikoThreeCameraControls__ } from './__ZikoThreeCameraControls__';
 
-class ZikoThreeTrackballControls extends __ZikoThreeCameraControls__{
+class TGLTrackballControl extends __ZikoThreeCameraControls__{
     constructor(target) {
         super(target, "trackball")
         this.control = new TrackballControls(target.camera.currentCamera, target.rendererTarget.domElement);
@@ -30,8 +30,8 @@ class ZikoThreeTrackballControls extends __ZikoThreeCameraControls__{
     }
 }
 
-const ZikoTrackballControls = target => new ZikoThreeTrackballControls(target);
+const trackball_ctrl = target => new TGLTrackballControl(target);
 export { 
-    ZikoTrackballControls,
-    ZikoThreeTrackballControls
+    trackball_ctrl,
+    TGLTrackballControl
 }

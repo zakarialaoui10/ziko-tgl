@@ -16,14 +16,14 @@ import {
 import { waitElm } from "../utils/index.js";
 import { 
     ZikoThreeOrbitControls, 
-    // ZikoThreeMapControls,
-    // ZikoThreeFlyControls,
-    // ZikoThreeTrackballControls,
-    // ZikoThreeArcballControls,
-    // ZikoThreeFirstPersonControls,
-    // ZikoThreePointerLockControls
+    // TGLMapControl,
+    // TGLFlyControl,
+    // TGLTrackballControl,
+    // TGLArcballControl,
+    // TGLFirstPersonControl,
+    // TGLPointerLockControl
 } from "../controls/index.js";
-import { ZikoThreeMapControls } from "../../extra/camera-controls/map.js";
+import { TGLMapControl } from "../../extra/camera-controls/map.js";
 import { isValidTexture, useTexture } from "../loaders/texture.js";
 class TGLScene extends UIElement{
     constructor(w,h){
@@ -258,11 +258,11 @@ class TGLScene extends UIElement{
         return this;
     }
     // useTrackballControls(){
-    //     return this.useControl(ZikoThreeTrackballControls)
+    //     return this.useControl(TGLTrackballControl)
     // }
     // useMapControls(){
     //     let restore=false;
-    //     if(!this.cache.controls.orbit)this.cache.controls.map = new ZikoThreeMapControls(this);
+    //     if(!this.cache.controls.orbit)this.cache.controls.map = new TGLMapControl(this);
     //     ["trackball","orbit","fly","firstPerson","pointerLock","arcball"].forEach(n=>this.controls[n]?.disable(restore));
     //     this.controls.map.enable(false);
     //     this.cache.currentCameraControls = this.cache.controls.map;
@@ -270,19 +270,19 @@ class TGLScene extends UIElement{
     // }
     useMapControls(){
         // console.log(101092)
-        return this.useControl(ZikoThreeMapControls)
+        return this.useControl(TGLMapControl)
     }
     // useFlyControls(){
-    //     return this.useControl(ZikoThreeFlyControls)
+    //     return this.useControl(TGLFlyControl)
     // }
     // usePointerLockControls(){
-    //     return this.useControl(ZikoThreePointerLockControls)
+    //     return this.useControl(TGLPointerLockControl)
     // }
     // useArcballControls(){
-    //     return this.useControl(ZikoThreeArcballControls)
+    //     return this.useControl(TGLArcballControl)
     // }
     // useFirstPersonControls(){
-    //     return this.useControl(ZikoThreeFirstPersonControls)
+    //     return this.useControl(TGLFirstPersonControl)
     // }
     useControl(Control){
         const name = Control.name

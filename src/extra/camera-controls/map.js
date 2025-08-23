@@ -1,6 +1,6 @@
 import { MapControls } from 'three/addons/controls/MapControls.js';
 import { __ZikoThreeCameraControls__ } from '../../core/controls/camera/ziko-three-camera-controls.js';
-class ZikoThreeMapControls extends __ZikoThreeCameraControls__{
+class TGLMapControl extends __ZikoThreeCameraControls__{
     constructor(target) {
         super(target, "map")
         this.init()
@@ -26,8 +26,8 @@ class ZikoThreeMapControls extends __ZikoThreeCameraControls__{
     }
 }
 
-const ZikoMapControls = target => new ZikoThreeMapControls(target);
+const map_ctrl = target => new TGLMapControl(target);
 export { 
-    ZikoMapControls,
-    ZikoThreeMapControls
+    map_ctrl,
+    TGLMapControl
  };
