@@ -34,14 +34,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "rollup -c rollup.config.js",
-    "build": "rollup -c rollup.config.js",
-    "watch": "rollup -c watch/rollup.config.js -w"
+    "watch": "rollup -c rollup.config.js -w",
+    "build": "rollup -c rollup.config.js"
   },
   "author": "zakaria elalaoui",
   "license": "MIT",
   "dependencies": {
     "three": "^0.179.1",
-    "ziko": "^0.41.0"
+    "ziko": "^0.41.1"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.4",

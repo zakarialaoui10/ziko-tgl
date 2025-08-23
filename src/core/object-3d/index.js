@@ -12,21 +12,21 @@ export{
     dodecahedron3,
     icosahedron3,
     octahedron3,
-} from "./ZikoThreePrimitives/ZikoThreeMesh.js";
+} from "./primitives/ZikoThreeMesh.js";
 export{
     line3
-} from "./ZikoThreePrimitives/ZikoThreeLine.js"
+} from "./primitives/ZikoThreeLine.js"
 export{
     groupe3,
-} from "./ZikoThreeGroupe/index.js"
+} from "./groupe/index.js"
 export { 
     svg3,
     extrude3
- } from "./ZikoThreeExtrude/index.js";
+ } from "./extrude/index.js";
 export {
     ui3
-} from "./ZikoThreeCss/index.js";
-export { htmlMesh } from "./ZikoThreeHTMLMesh/index.js";
+} from "./css/index.js";
+export { htmlMesh } from "./html-mesh/index.js";
 export {
     useAxesHelper,
     useGridHelper,
@@ -34,11 +34,11 @@ export {
     usePlaneHelper,
     useBoxHelper,
     useBoxVectorHelper
-} from "./ZikoThreeHelper/index.js"
+} from "./helpers/index.js"
 // export { 
 //     text3,
 //     text2
 //  } from "./ZikoThreePrimitives/ZikoThreeText.js";
 export{
     points3
-} from "./ZikoThreePrimitives/ZikoThreePoints.js"
+} from "./primitives/ZikoThreePoints.js"

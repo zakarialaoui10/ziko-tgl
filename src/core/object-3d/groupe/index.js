@@ -3,7 +3,7 @@ import * as THREE from "three"
 import { 
 	TglObject3D,
  } from "../tgl-object3d.js";
-import { ZikoThreeMesh } from "../ZikoThreePrimitives/ZikoThreeMesh.js";
+import { ZikoThreeMesh } from "../primitives/ZikoThreeMesh.js";
 class ZikoThreeGroupe extends TglObject3D{
 	constructor(){
 		super();

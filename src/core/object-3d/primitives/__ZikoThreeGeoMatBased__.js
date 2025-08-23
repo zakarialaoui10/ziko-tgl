@@ -1,6 +1,6 @@
 import { Color } from "three";
 import { TglObject3D } from "../tgl-object3d.js";
-import { isValidTexture, useTexture } from "../../loaders/texture";
+import { isValidTexture, useTexture } from "../../loaders/texture.js";
 class __ZikoThreeGeoMatBased__ extends TglObject3D{
     constructor(){
         super()
