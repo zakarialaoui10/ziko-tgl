@@ -12,5 +12,5 @@ class ZikoThreHTMLMesh extends TglObject3D{
 		return "html";
 	}
 }
-const htmlMesh=UIElement=>new ZikoThreHTMLMesh(UIElement)
-export {htmlMesh}
+const html_mesh=UIElement=>new ZikoThreHTMLMesh(UIElement)
+export {html_mesh}

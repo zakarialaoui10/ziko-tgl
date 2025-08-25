@@ -4,7 +4,7 @@ import {
     LineSegments,
     LineBasicMaterial
  } from "three";
-import { ZikoThreeMesh } from "./ZikoThreeMesh.js";
+import { ZikoThreeMesh } from "./tgl-mesh.js";
 class ZikoThreeWireframe extends TglObject3D{
     constructor(ZikoMesh){
         super()

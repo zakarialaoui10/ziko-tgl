@@ -12,10 +12,10 @@ export{
     dodecahedron3,
     icosahedron3,
     octahedron3,
-} from "./primitives/ZikoThreeMesh.js";
+} from "./primitives/tgl-mesh.js";
 export{
     line3
-} from "./primitives/ZikoThreeLine.js"
+} from "./primitives/tgl-line.js"
 export{
     groupe3,
 } from "./groupe/index.js"
@@ -26,7 +26,7 @@ export {
 export {
     ui3
 } from "./css/index.js";
-export { htmlMesh } from "./html-mesh/index.js";
+export { html_mesh } from "./html-mesh/index.js";
 export {
     useAxesHelper,
     useGridHelper,
@@ -41,4 +41,4 @@ export {
 //  } from "./ZikoThreePrimitives/ZikoThreeText.js";
 export{
     points3
-} from "./primitives/ZikoThreePoints.js"
+} from "./primitives/tgl-points.js"

@@ -1,4 +1,4 @@
-import { ZikoThreeMesh } from "../primitives/ZikoThreeMesh.js";
+import { ZikoThreeMesh } from "../primitives/tgl-mesh.js";
 import { ZikoThreeGroupe } from "../groupe/index.js";
 class ZikoThreeExtrude extends ZikoThreeMesh{
     constructor(shape,depth=5,bevelEnabled=false){

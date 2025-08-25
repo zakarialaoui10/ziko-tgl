@@ -31,7 +31,7 @@ export * from "./use/index.js"
 // import { 
 //     useCoordinates,
 //     texture,
-//     useEdges,
+//     edges,
 //     useWireframe,
 //     usePoints,
 //     useSprite
@@ -56,7 +56,7 @@ export * from "./use/index.js"
 //     svg3,
 //     extrude3,
 //     ui3,
-//     htmlMesh,
+//     html_mesh,
 //     // text3,
 //     // text2
 // } from "./object-3d/index.js";
@@ -68,7 +68,7 @@ export * from "./use/index.js"
 // const ZikoGl={
 //     // THREE,
 //     ui3,
-//     htmlMesh,
+//     html_mesh,
 //     // text3,
 //     // text2,
 //     loadSVG,
@@ -111,7 +111,7 @@ export * from "./use/index.js"
 //     useDragControls,
 //     usePointerControls,
 //     useCoordinates,
-//     useEdges,
+//     edges,
 //     useWireframe,
 //     usePoints,
 //     useSprite

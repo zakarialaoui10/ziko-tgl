@@ -1,7 +1,7 @@
 import { Color } from "three";
 import { TglObject3D } from "../tgl-object3d.js";
 import { isValidTexture, texture } from "../../loaders/texture.js";
-class __ZikoThreeGeoMatBased__ extends TglObject3D{
+class TGLPrimitives extends TglObject3D{
     constructor(){
         super()
         Object.assign(this.cache,{
@@ -81,5 +81,5 @@ function mapTexture(__key,value){
         return[__key,value]
 }
 export{
-    __ZikoThreeGeoMatBased__
+    TGLPrimitives
 }

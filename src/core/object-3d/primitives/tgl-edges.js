@@ -3,9 +3,9 @@ import {
     LineSegments,
     LineBasicMaterial
  } from "three";
-import { ZikoThreeMesh } from "./ZikoThreeMesh.js";
-import { __ZikoThreeGeoMatBased__ } from "./__ZikoThreeGeoMatBased__.js";
-class ZikoThreeEdges extends __ZikoThreeGeoMatBased__{
+import { ZikoThreeMesh } from "./tgl-mesh.js";
+import { TGLPrimitives } from "./__tgl-primitives__.js";
+class TGLEdges extends TGLPrimitives{
     constructor(ZikoMesh){
         super()
         if(ZikoMesh instanceof ZikoThreeMesh){
@@ -21,7 +21,7 @@ class ZikoThreeEdges extends __ZikoThreeGeoMatBased__{
         return "edges";
     }
 }
-const useEdges=ZikoMesh=>new ZikoThreeEdges(ZikoMesh);
+const edges=ZikoMesh=>new TGLEdges(ZikoMesh);
 export{
-    useEdges
+    edges
 }

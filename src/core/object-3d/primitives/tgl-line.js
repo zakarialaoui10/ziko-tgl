@@ -4,8 +4,8 @@ import {
     LineBasicMaterial,
     LineDashedMaterial
  } from "three";
-import { __ZikoThreeGeoMatBased__ } from "./__ZikoThreeGeoMatBased__";
-class ZikoThreeLine extends __ZikoThreeGeoMatBased__{
+import { TGLPrimitives } from "./__tgl-primitives__";
+class ZikoThreeLine extends TGLPrimitives{
     constructor(X,Y,Z){
         super();
         let points = [X,Y,Z].map(pts=>new THREE.Vector3(...pts));

@@ -6,10 +6,10 @@ import {
  } from "three/examples/jsm/Addons.js";
 import { Mesh,MeshBasicMaterial,ShapeGeometry } from "three";
 import {fontData} from "./Fonts/helvetiker_regular.js"
-import { __ZikoThreeGeoMatBased__ } from "./__ZikoThreeGeoMatBased__.js";
+import { TGLPrimitives } from "./__tgl-primitives__.js";
 const loader = new FontLoader();
 const font = loader.parse(fontData); 
-class ZikoThreeText extends __ZikoThreeGeoMatBased__{
+class ZikoThreeText extends TGLPrimitives{
     constructor(text){
         super()
         this.text = text;

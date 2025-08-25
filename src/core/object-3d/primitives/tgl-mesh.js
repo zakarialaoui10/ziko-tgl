@@ -23,8 +23,8 @@ import {
     MeshMatcapMaterial,
     MeshToonMaterial
  } from "three";
-import { __ZikoThreeGeoMatBased__ } from "./__ZikoThreeGeoMatBased__.js";
-class ZikoThreeMesh extends __ZikoThreeGeoMatBased__ {
+import { TGLPrimitives } from "./__tgl-primitives__.js";
+class ZikoThreeMesh extends TGLPrimitives {
     constructor(Geometry, Material) {
         super();
         this.element = new Mesh(Geometry, Material);

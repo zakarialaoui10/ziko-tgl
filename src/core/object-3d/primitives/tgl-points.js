@@ -3,9 +3,9 @@ import {
     PointsMaterial,
     BufferGeometry
  } from "three";
-import { ZikoThreeMesh } from "./ZikoThreeMesh.js";
-import { __ZikoThreeGeoMatBased__ } from "./__ZikoThreeGeoMatBased__.js";
-class ZikoThreePoints extends __ZikoThreeGeoMatBased__{
+import { ZikoThreeMesh } from "./tgl-mesh.js";
+import { TGLPrimitives } from "./__tgl-primitives__.js";
+class ZikoThreePoints extends TGLPrimitives{
     constructor(){
         super();
     }
