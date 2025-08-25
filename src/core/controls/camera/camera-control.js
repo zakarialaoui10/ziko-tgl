@@ -3,7 +3,7 @@ import {
     Quaternion,
     Vector3 
 } from "three";
-class __ZikoThreeCameraControls__ extends __TGLControls__{
+class TGLCameraControl extends __TGLControls__{
     constructor(target, name){
         super(target, name)
         Object.assign(this.cache, {
@@ -56,5 +56,5 @@ class __ZikoThreeCameraControls__ extends __TGLControls__{
     
 }
 export{
-    __ZikoThreeCameraControls__
+    TGLCameraControl
 }

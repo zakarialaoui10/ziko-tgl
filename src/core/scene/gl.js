@@ -15,7 +15,7 @@ import {
  } from "../object-3d/tgl-object3d.js";
 import { waitElm } from "../utils/index.js";
 import { 
-    ZikoThreeOrbitControls, 
+    TGLOrbitControl, 
     // TGLMapControl,
     // TGLFlyControl,
     // TGLTrackballControl,
@@ -251,7 +251,7 @@ class TGLScene extends UIElement{
     }
     useOrbitControls(){
         let restore=false;
-        if(!this.cache.controls.orbit)this.cache.controls.orbit = new ZikoThreeOrbitControls(this);
+        if(!this.cache.controls.orbit)this.cache.controls.orbit = new TGLOrbitControl(this);
         ["trackball","map","fly","firstPerson","pointerLock","arcball"].forEach(n=>this.controls[n]?.disable(restore));
         this.controls.orbit.enable(false);
         this.cache.currentCameraControls=this.cache.controls.orbit;

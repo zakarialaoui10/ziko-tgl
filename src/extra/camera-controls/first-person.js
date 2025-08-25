@@ -1,7 +1,7 @@
 import { FirstPersonControls } from "three/addons/controls/FirstPersonControls.js";
-import { __ZikoThreeCameraControls__ } from './__ZikoThreeCameraControls__';
+import { TGLCameraControl } from './TGLCameraControl';
 
-class TGLFirstPersonControl extends __ZikoThreeCameraControls__{
+class TGLFirstPersonControl extends TGLCameraControl{
     constructor(target) {
         super(target, "firstperson");
         this.init()

@@ -1,6 +1,6 @@
 {
   "name": "ziko-tgl",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "",
   "main": "src/index.js",
   "type": "module",
@@ -41,7 +41,7 @@
   "license": "MIT",
   "dependencies": {
     "three": "^0.179.1",
-    "ziko": "^0.41.1"
+    "ziko": "^0.42.0"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.4",

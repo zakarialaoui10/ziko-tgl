@@ -1,6 +1,6 @@
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { __ZikoThreeCameraControls__ } from './ziko-three-camera-controls';
-class ZikoThreeOrbitControls extends __ZikoThreeCameraControls__{
+import { TGLCameraControl } from './camera-control.js';
+class TGLOrbitControl extends TGLCameraControl{
     constructor(target){
         super(target, "orbit")
         this.init(false)
@@ -25,8 +25,8 @@ class ZikoThreeOrbitControls extends __ZikoThreeCameraControls__{
         return this;
     }
 }
-const ZikoOrbitControls=target=>new ZikoThreeOrbitControls(target);
+const orbit_ctrl = target => new TGLOrbitControl(target);
 export {
-    ZikoOrbitControls,
-    ZikoThreeOrbitControls
+    orbit_ctrl,
+    TGLOrbitControl
 }

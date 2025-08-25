@@ -11,12 +11,12 @@ export * from "./use/index.js"
 // import { SceneCss } from "./scene/css.js";
 // import { loadSVG } from "./loaders/svg.js";
 // import { 
-//     useAmbientLight,
-//     useDirectionalLight,
-//     useHemisphereLight,
-//     usePointLight,
-//     useRectAreaLight,
-//     useSpotLight,
+//     ambient_light,
+//     directional_light,
+//     hemisphere_light,
+//     point_light,
+//     rect_area_light,
+//     spot_light,
 // } from "./light/index.js";
 // import{
 //     useAxesHelper,
@@ -101,12 +101,12 @@ export * from "./use/index.js"
 //     useArrowHelper,
 //     useLightHelper,
 //     useTexture,
-//     useAmbientLight,
-//     useDirectionalLight,
-//     useHemisphereLight,
-//     usePointLight,
-//     useRectAreaLight,
-//     useSpotLight,
+//     ambient_light,
+//     directional_light,
+//     hemisphere_light,
+//     point_light,
+//     rect_area_light,
+//     spot_light,
 //     useTransformControls,
 //     useDragControls,
 //     usePointerControls,

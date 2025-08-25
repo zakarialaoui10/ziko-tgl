@@ -1,6 +1,6 @@
 import { MapControls } from 'three/addons/controls/MapControls.js';
-import { __ZikoThreeCameraControls__ } from '../../core/controls/camera/ziko-three-camera-controls.js';
-class TGLMapControl extends __ZikoThreeCameraControls__{
+import { TGLCameraControl } from '../../core/controls/camera/camera-control.js';
+class TGLMapControl extends TGLCameraControl{
     constructor(target) {
         super(target, "map")
         this.init()

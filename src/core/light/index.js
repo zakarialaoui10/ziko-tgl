@@ -92,18 +92,18 @@ class TglSpotLight extends TglLight {
     }
 }
 
-const useAmbientLight = (color, intensity) => new TglAmbientLight(color, intensity);
-const useDirectionalLight = (color, intensity) => new TglDirectionalLight(color, intensity);
-const useHemisphereLight = (skyColor, groundColor, intensity) => new TglHemisphereLight(skyColor, groundColor, intensity);
-const usePointLight = (color, intensity, distance, decay) => new TglPointLight(color, intensity, distance, decay);
-const useRectAreaLight = (color, intensity, width, height) => new TglRectAreaLight(color, intensity, width, height);
-const useSpotLight = (color, intensity, distance, angle, penumbra, decay) => new TglSpotLight(color, intensity, distance, angle, penumbra, decay);
+const ambient_light = (color, intensity) => new TglAmbientLight(color, intensity);
+const directional_light = (color, intensity) => new TglDirectionalLight(color, intensity);
+const hemisphere_light = (skyColor, groundColor, intensity) => new TglHemisphereLight(skyColor, groundColor, intensity);
+const point_light = (color, intensity, distance, decay) => new TglPointLight(color, intensity, distance, decay);
+const rect_area_light = (color, intensity, width, height) => new TglRectAreaLight(color, intensity, width, height);
+const spot_light = (color, intensity, distance, angle, penumbra, decay) => new TglSpotLight(color, intensity, distance, angle, penumbra, decay);
 
 export {
-    useAmbientLight,
-    useDirectionalLight,
-    useHemisphereLight,
-    usePointLight,
-    useRectAreaLight,
-    useSpotLight
+    ambient_light,
+    directional_light,
+    hemisphere_light,
+    point_light,
+    rect_area_light,
+    spot_light
 };

@@ -1,7 +1,7 @@
 import { FlyControls } from 'three/addons/controls/FlyControls.js';
-import { __ZikoThreeCameraControls__ } from './__ZikoThreeCameraControls__';
+import { TGLCameraControl } from './TGLCameraControl';
 
-class TGLFlyControl extends __ZikoThreeCameraControls__{
+class TGLFlyControl extends TGLCameraControl{
     constructor(target) {
         super(target, "fly");
         this.init()

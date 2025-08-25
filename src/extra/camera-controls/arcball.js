@@ -1,7 +1,7 @@
 import { ArcballControls } from 'three/addons/controls/ArcballControls.js';
-import { __ZikoThreeCameraControls__ } from '../../core/controls-g/camera/__ZikoThreeCameraControls__';
+import { TGLCameraControl } from '../../core/controls-g/camera/TGLCameraControl';
 
-class TGLArcballControl extends __ZikoThreeCameraControls__{
+class TGLArcballControl extends TGLCameraControl{
     constructor(target) {
         super(target, "arcball");
         this.init()

@@ -1,6 +1,6 @@
 import {tags, PI} from "ziko"
 import {
-  SceneGl, useTexture, plane3, cube3, useDirectionalLight, 
+  SceneGl, useTexture, plane3, cube3, directional_light, 
   // useLightHelper
 } from "ziko-tgl"
 
@@ -21,7 +21,7 @@ const Floor = plane3(10, 10)
 
 const C1 = cube3(1).pos(-1, 2, 0).useMeshStandardMaterial().useShadow();
 const C2 = cube3(1).pos(0, 1, 0).useMeshStandardMaterial().useShadow();
-const L = useDirectionalLight(0xffffff, 5).pos(0, 3, 0).castShadow();
+const L = directional_light(0xffffff, 5).pos(0, 3, 0).castShadow();
 SCENE.add(
   Floor, C1, C2, L, 
   // useLightHelper(L)
