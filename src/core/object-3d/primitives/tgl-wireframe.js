@@ -4,11 +4,11 @@ import {
     LineSegments,
     LineBasicMaterial
  } from "three";
-import { ZikoThreeMesh } from "./tgl-mesh.js";
-class ZikoThreeWireframe extends TglObject3D{
+import { TGLMesh } from "./tgl-mesh.js";
+class TGLWireframe extends TglObject3D{
     constructor(ZikoMesh){
         super()
-        if(ZikoMesh instanceof ZikoThreeMesh){
+        if(ZikoMesh instanceof TGLMesh){
             const Geometry = new WireframeGeometry(ZikoMesh.element.geometry);
             const Material = new LineBasicMaterial(ZikoMesh.cache.materialAttributes);
             this.element=new LineSegments(Geometry, Material);
@@ -18,7 +18,7 @@ class ZikoThreeWireframe extends TglObject3D{
         return "wireframe"
     }
 }
-const useWireframe=ZikoMesh=>new ZikoThreeWireframe(ZikoMesh);
+const wireframe=ZikoMesh=>new TGLWireframe(ZikoMesh);
 export{
-    useWireframe
+    wireframe
 }

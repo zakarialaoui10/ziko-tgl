@@ -3,8 +3,8 @@ import * as THREE from "three"
 import { 
 	TglObject3D,
  } from "../tgl-object3d.js";
-import { ZikoThreeMesh } from "../primitives/tgl-mesh.js";
-class ZikoThreeGroupe extends TglObject3D{
+import { TGLMesh } from "../primitives/tgl-mesh.js";
+class TGLGroupe extends TglObject3D{
 	constructor(){
 		super();
 		this.element=new THREE.Group();
@@ -19,7 +19,7 @@ class ZikoThreeGroupe extends TglObject3D{
 	add(...obj){
 		for(let i=0;i<obj.length;i++){
 			if(obj[i] instanceof THREE.Mesh){
-				obj[i]=new ZikoThreeMesh(obj);
+				obj[i]=new TGLMesh(obj);
 			}
 			this.element.add(obj[i].element);
 			this.items.push(obj[i]);
@@ -37,6 +37,6 @@ class ZikoThreeGroupe extends TglObject3D{
        return this;
 	}
 }
-export const groupe3=(...obj)=>new ZikoThreeGroupe().add(...obj);
-export {ZikoThreeGroupe}
+export const groupe3=(...obj)=>new TGLGroupe().add(...obj);
+export {TGLGroupe}
 

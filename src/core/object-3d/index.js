@@ -38,7 +38,7 @@ export {
 // export { 
 //     text3,
 //     text2
-//  } from "./ZikoThreePrimitives/ZikoThreeText.js";
+//  } from "./ZikoThreePrimitives/TGLText.js";
 export{
     points3
 } from "./primitives/tgl-points.js"

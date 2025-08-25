@@ -3,12 +3,12 @@ import {
     LineSegments,
     LineBasicMaterial
  } from "three";
-import { ZikoThreeMesh } from "./tgl-mesh.js";
+import { TGLMesh } from "./tgl-mesh.js";
 import { TGLPrimitives } from "./__tgl-primitives__.js";
 class TGLEdges extends TGLPrimitives{
     constructor(ZikoMesh){
         super()
-        if(ZikoMesh instanceof ZikoThreeMesh){
+        if(ZikoMesh instanceof TGLMesh){
             const Geometry = new EdgesGeometry(ZikoMesh.element.geometry);
             const Material = new LineBasicMaterial(ZikoMesh.cache.materialAttributes);
             this.element = new LineSegments(Geometry, Material);

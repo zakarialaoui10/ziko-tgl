@@ -5,7 +5,7 @@ import {
 import { TGLPrimitives } from "./__tgl-primitives__.js";
 import { isValidTexture } from "../../loaders/texture.js";
 import { texture } from "../../loaders/texture.js";
-class ZikoThreeSprite extends TGLPrimitives{
+class TGLSprite extends TGLPrimitives{
     constructor(texture){
         super()
         const material = new SpriteMaterial({ map: isValidTexture(texture)?texture(texture):null });
@@ -18,7 +18,7 @@ class ZikoThreeSprite extends TGLPrimitives{
         return "sprite";
     }
 }
-const useSprite=texture=>new ZikoThreeSprite(texture);
+const sprite=texture=>new TGLSprite(texture);
 export{
-    useSprite
+    sprite
 }

@@ -9,7 +9,7 @@ import {fontData} from "./Fonts/helvetiker_regular.js"
 import { TGLPrimitives } from "./__tgl-primitives__.js";
 const loader = new FontLoader();
 const font = loader.parse(fontData); 
-class ZikoThreeText extends TGLPrimitives{
+class TGLText extends TGLPrimitives{
     constructor(text){
         super()
         this.text = text;
@@ -18,7 +18,7 @@ class ZikoThreeText extends TGLPrimitives{
         return "text";
     }
 }
-class ZikoThreeText3D extends ZikoThreeText{
+class TGLText3D extends TGLText{
     constructor(text,size=1,height=1){
         super(text);
         const geometry = new TextGeometry(text, {
@@ -38,7 +38,7 @@ class ZikoThreeText3D extends ZikoThreeText{
         ]
     }
 }
-class ZikoThreeText2D extends ZikoThreeText{
+class TGLText2D extends TGLText{
     constructor(text,size=1){
         super(text);
         const shapes = font.generateShapes( text, size );
@@ -55,8 +55,8 @@ class ZikoThreeText2D extends ZikoThreeText{
         ]
     }
 }
-const text3=(text,size,height)=>new ZikoThreeText3D(text,size,height);
-const text2=(text,size)=>new ZikoThreeText2D(text,size);
+const text3=(text,size,height)=>new TGLText3D(text,size,height);
+const text2=(text,size)=>new TGLText2D(text,size);
 export { 
     text3,
     text2

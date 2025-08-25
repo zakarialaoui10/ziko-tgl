@@ -32,9 +32,9 @@ export * from "./use/index.js"
 //     useCoordinates,
 //     texture,
 //     edges,
-//     useWireframe,
+//     wireframe,
 //     usePoints,
-//     useSprite
+//     sprite
 //  } from "./use/index.js";
 // import{
 //     cube3,
@@ -112,9 +112,9 @@ export * from "./use/index.js"
 //     usePointerControls,
 //     useCoordinates,
 //     edges,
-//     useWireframe,
+//     wireframe,
 //     usePoints,
-//     useSprite
+//     sprite
 // }
 // if ( globalThis.__ZikoGl__ ) {
 //     console.warn( 'WARNING: Multiple instances of Zikogl.js being imported.' );

@@ -5,7 +5,7 @@ import {
     LineDashedMaterial
  } from "three";
 import { TGLPrimitives } from "./__tgl-primitives__";
-class ZikoThreeLine extends TGLPrimitives{
+class TGLLine extends TGLPrimitives{
     constructor(X,Y,Z){
         super();
         let points = [X,Y,Z].map(pts=>new THREE.Vector3(...pts));
@@ -29,8 +29,8 @@ class ZikoThreeLine extends TGLPrimitives{
         return this;
     }
 }
-const line3=(X,Y,Z=new Array(X.length).fill(0))=>new ZikoThreeLine(X,Y,Z)
+const line3=(X,Y,Z=new Array(X.length).fill(0))=>new TGLLine(X,Y,Z)
 export{
-    ZikoThreeLine,
+    TGLLine,
     line3
 }

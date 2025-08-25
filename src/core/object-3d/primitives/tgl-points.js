@@ -3,9 +3,9 @@ import {
     PointsMaterial,
     BufferGeometry
  } from "three";
-import { ZikoThreeMesh } from "./tgl-mesh.js";
+import { TGLMesh } from "./tgl-mesh.js";
 import { TGLPrimitives } from "./__tgl-primitives__.js";
-class ZikoThreePoints extends TGLPrimitives{
+class TGLPoints extends TGLPrimitives{
     constructor(){
         super();
     }
@@ -16,16 +16,16 @@ class ZikoThreePoints extends TGLPrimitives{
         return "points"
     }
 }
-class ZikoThreePointsMeshBased extends ZikoThreePoints{
+class TGLMeshBasedPoints extends TGLPoints{
     constructor(ZikoMesh){
         super();
-        if(ZikoMesh instanceof ZikoThreeMesh){
+        if(ZikoMesh instanceof TGLMesh){
             const Material = new PointsMaterial(ZikoMesh.cache.materialAttributes);
             this.element=new Points(ZikoMesh.element.geometry, Material);
         }
     }
 }
-class ZikoThreePointsVectorBased extends ZikoThreePoints{
+class TGLVectorBasedPoints extends TGLPoints{
     constructor(X,Y,Z,size,color){
         super();
         const geometry = new BufferGeometry();
@@ -38,8 +38,8 @@ class ZikoThreePointsVectorBased extends ZikoThreePoints{
         this.element = new Points(geometry,material);
     }
 }
-const usePoints=ZikoMesh=>new ZikoThreePointsMeshBased(ZikoMesh);
-const points3=(X,Y,Z,size = 0.1,color = 0x111111)=>new ZikoThreePointsVectorBased(X,Y,Z,size,color);
+const usePoints=ZikoMesh=>new TGLMeshBasedPoints(ZikoMesh);
+const points3=(X,Y,Z,size = 0.1,color = 0x111111)=>new TGLVectorBasedPoints(X,Y,Z,size,color);
 export{
     usePoints,
     points3
