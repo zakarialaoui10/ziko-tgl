@@ -1,10 +1,10 @@
-import { TglObject3D } from "../tgl-object3d.js";
+import { TglObject3D } from "../../tgl-object3d.js";
 import { 
     WireframeGeometry,
     LineSegments,
     LineBasicMaterial
  } from "three";
-import { TGLMesh } from "./tgl-mesh.js";
+import { TGLMesh } from "../mesh/index.js";
 class TGLWireframe extends TglObject3D{
     constructor(ZikoMesh){
         super()

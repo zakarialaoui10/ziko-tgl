@@ -23,7 +23,7 @@ import {
     MeshMatcapMaterial,
     MeshToonMaterial
  } from "three";
-import { TGLPrimitives } from "./__tgl-primitives__.js";
+import { TGLPrimitives } from "../__tgl-primitives__.js";
 class TGLMesh extends TGLPrimitives {
     constructor(Geometry, Material) {
         super();

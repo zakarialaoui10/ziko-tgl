@@ -2,9 +2,9 @@ import {
     Sprite,
     SpriteMaterial
  } from "three";
-import { TGLPrimitives } from "./__tgl-primitives__.js";
-import { isValidTexture } from "../../loaders/texture.js";
-import { texture } from "../../loaders/texture.js";
+import { TGLPrimitives } from "../__tgl-primitives__.js";
+import { isValidTexture } from "../../../loaders/texture.js";
+import { texture } from "../../../loaders/texture.js";
 class TGLSprite extends TGLPrimitives{
     constructor(texture){
         super()

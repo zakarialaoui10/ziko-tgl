@@ -5,8 +5,8 @@ import {
     FontLoader,
  } from "three/examples/jsm/Addons.js";
 import { Mesh,MeshBasicMaterial,ShapeGeometry } from "three";
-import {fontData} from "./Fonts/helvetiker_regular.js"
-import { TGLPrimitives } from "./__tgl-primitives__.js";
+import {fontData} from "../__fonts__/helvetiker_regular.js"
+import { TGLPrimitives } from "../__tgl-primitives__.js";
 const loader = new FontLoader();
 const font = loader.parse(fontData); 
 class TGLText extends TGLPrimitives{

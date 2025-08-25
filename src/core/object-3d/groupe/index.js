@@ -3,7 +3,7 @@ import * as THREE from "three"
 import { 
 	TglObject3D,
  } from "../tgl-object3d.js";
-import { TGLMesh } from "../primitives/tgl-mesh.js";
+import { TGLMesh } from "../primitives/mesh/index.js";
 class TGLGroupe extends TglObject3D{
 	constructor(){
 		super();

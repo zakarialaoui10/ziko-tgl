@@ -3,8 +3,8 @@ import {
     PointsMaterial,
     BufferGeometry
  } from "three";
-import { TGLMesh } from "./tgl-mesh.js";
-import { TGLPrimitives } from "./__tgl-primitives__.js";
+import { TGLMesh } from "../mesh/index.js";
+import { TGLPrimitives } from "../__tgl-primitives__.js";
 class TGLPoints extends TGLPrimitives{
     constructor(){
         super();

@@ -1,4 +1,4 @@
-import { TGLMesh } from "../primitives/tgl-mesh.js";
+import { TGLMesh } from "../primitives/mesh/index.js";
 import { TGLGroupe } from "../groupe/index.js";
 class TGLThreeExtrude extends TGLMesh{
     constructor(shape,depth=5,bevelEnabled=false){
