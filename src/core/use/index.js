@@ -1,4 +1,4 @@
-export { useTexture } from "../loaders/texture"
+export { texture } from "../loaders/texture"
 // export { useTransformControls } from "../Controls/transform";
 export { useEdges } from "../object-3d/primitives/ZikoThreeEdges"
 export { useWireframe } from "../object-3d/primitives/ZikoThreeWireframe";

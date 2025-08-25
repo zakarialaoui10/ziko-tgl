@@ -24,7 +24,7 @@ import {
     // TGLPointerLockControl
 } from "../controls/index.js";
 import { TGLMapControl } from "../../extra/camera-controls/map.js";
-import { isValidTexture, useTexture } from "../loaders/texture.js";
+import { isValidTexture, texture } from "../loaders/texture.js";
 class TGLScene extends UIElement{
     constructor(w,h){
         super({element : "figure", name : "figure"})
@@ -152,7 +152,7 @@ class TGLScene extends UIElement{
         if(["string","number"].includes(typeof texture)){
             if((texture.length===7||texture.length===4)&&texture[0]==="#")this.sceneGl.background=new Color(texture);
         }
-        if(isValidTexture(texture))this.sceneGl.background=useTexture(texture);
+        if(isValidTexture(texture))this.sceneGl.background=texture(texture);
         this.renderGl();
         return this;
     }

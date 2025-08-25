@@ -4,11 +4,11 @@ import {
  } from "three";
 import { __ZikoThreeGeoMatBased__ } from "./__ZikoThreeGeoMatBased__.js";
 import { isValidTexture } from "../../loaders/texture.js";
-import { useTexture } from "../../loaders/texture.js";
+import { texture } from "../../loaders/texture.js";
 class ZikoThreeSprite extends __ZikoThreeGeoMatBased__{
     constructor(texture){
         super()
-        const material = new SpriteMaterial({ map: isValidTexture(texture)?useTexture(texture):null });
+        const material = new SpriteMaterial({ map: isValidTexture(texture)?texture(texture):null });
         this.element = new Sprite(material); 
     }
     isSprite(){

@@ -30,7 +30,7 @@ export * from "./use/index.js"
 // } from "./object-3d/ZikoThreeHelper/index.js"
 // import { 
 //     useCoordinates,
-//     useTexture,
+//     texture,
 //     useEdges,
 //     useWireframe,
 //     usePoints,
@@ -100,7 +100,7 @@ export * from "./use/index.js"
 //     useBoxVectorHelper,
 //     useArrowHelper,
 //     useLightHelper,
-//     useTexture,
+//     texture,
 //     ambient_light,
 //     directional_light,
 //     hemisphere_light,

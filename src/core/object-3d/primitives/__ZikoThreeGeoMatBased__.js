@@ -1,6 +1,6 @@
 import { Color } from "three";
 import { TglObject3D } from "../tgl-object3d.js";
-import { isValidTexture, useTexture } from "../../loaders/texture.js";
+import { isValidTexture, texture } from "../../loaders/texture.js";
 class __ZikoThreeGeoMatBased__ extends TglObject3D{
     constructor(){
         super()
@@ -76,7 +76,7 @@ function mapTexture(__key,value){
         if(value instanceof Color) this.element.material.color=value;
         if(isValidTexture(value)) {
             this.element.material.needsUpdate=true;
-            value = useTexture(value);
+            value = texture(value);
         }
         return[__key,value]
 }

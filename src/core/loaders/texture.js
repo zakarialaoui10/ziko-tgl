@@ -8,28 +8,28 @@ import {
 //     LottieLoader
 // } from "three/examples/jsm/Addons.js";
 import { UIElement, tags } from "ziko";
-const useTexture = texture =>{
-    if(texture instanceof Texture) return texture;
-    if(texture instanceof UIElement){
-        const element = texture.element;
+const texture = mapper =>{
+    if(mapper instanceof Texture) return mapper;
+    if(mapper instanceof UIElement){
+        const element = mapper.element;
         switch(element.tagName.toLowerCase()){
             case 'img' : return new TextureLoader().load(element.src);
             case 'canvas' : return new CanvasTexture(element);
             case 'video' : return new VideoTexture(element);
-            case 'svg' : return useTexture( tags.img({src :texture.toImg()}))
+            case 'svg' : return texture( tags.img({src :mapper.toImg()}))
         }
     }
-    if(texture instanceof HTMLElement || texture instanceof SVGAElement){
-        switch(texture.tagName.toLowerCase()){
-            case 'img' : return new TextureLoader().load(texture.src);
-            case 'canvas' : return new CanvasTexture(texture);
-            case 'video' : return new VideoTexture(texture);
-            // case 'svg' : return useTexture( tags.img({src :texture.toImg()}))
+    if(mapper instanceof HTMLElement || mapper instanceof SVGAElement){
+        switch(mapper.tagName.toLowerCase()){
+            case 'img' : return new TextureLoader().load(mapper.src);
+            case 'canvas' : return new CanvasTexture(mapper);
+            case 'video' : return new VideoTexture(mapper);
+            // case 'svg' : return texture( tags.img({src :mapper.toImg()}))
         }
     }
-    // throw new Error("Unsupported texture type");
+    // throw new Error("Unsupported mapper type");
 }
-const isValidTexture=texture=>[
+const isValidTexture=mapper=>[
     Texture,
     // ZikoUIImage,
     // ZikoUICanvas,
@@ -38,10 +38,10 @@ const isValidTexture=texture=>[
     HTMLImageElement,
     HTMLVideoElement,
     HTMLCanvasElement
-].some(n=>texture instanceof n)
+].some(n=>mapper instanceof n)
 export {
     isValidTexture,
-    useTexture
+    texture
 }
 
 // if(value instanceof UIElement){

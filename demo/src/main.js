@@ -1,6 +1,6 @@
 import {tags, PI} from "ziko"
 import {
-  SceneGl, useTexture, plane3, cube3, directional_light, 
+  SceneGl, texture, plane3, cube3, directional_light, 
   // useLightHelper
 } from "ziko-tgl"
 
@@ -9,7 +9,7 @@ import { TGLMapControl } from "ziko-tgl/extra/camera-controls/map.js"
 globalThis.SCENE = SceneGl("100vw", "100vh").useShadow();
 globalThis.im1 = tags.img({src : "/im.png"});
 // im1.st.hide();
-const t1 = useTexture(im1);
+const t1 = texture(im1);
 
 const Floor = plane3(10, 10)
   .rot(-PI / 3, 0, 0)
