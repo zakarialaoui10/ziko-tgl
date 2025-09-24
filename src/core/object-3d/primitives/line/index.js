@@ -4,7 +4,7 @@ import {
     LineBasicMaterial,
     LineDashedMaterial
  } from "three";
-import { TGLPrimitives } from "../__tgl-primitives__";
+import { TGLPrimitives } from "../tgl-primitives";
 class TGLLine extends TGLPrimitives{
     constructor(X,Y,Z){
         super();

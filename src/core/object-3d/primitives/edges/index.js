@@ -4,7 +4,7 @@ import {
     LineBasicMaterial
  } from "three";
 import { TGLMesh } from "../mesh/index.js";
-import { TGLPrimitives } from "../__tgl-primitives__.js";
+import { TGLPrimitives } from "../tgl-primitives.js";
 class TGLEdges extends TGLPrimitives{
     constructor(ZikoMesh){
         super()

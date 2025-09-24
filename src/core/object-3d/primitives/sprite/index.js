@@ -2,13 +2,13 @@ import {
     Sprite,
     SpriteMaterial
  } from "three";
-import { TGLPrimitives } from "../__tgl-primitives__.js";
+import { TGLPrimitives } from "../tgl-primitives.js";
 import { isValidTexture } from "../../../loaders/texture.js";
 import { texture } from "../../../loaders/texture.js";
 class TGLSprite extends TGLPrimitives{
-    constructor(texture){
+    constructor(mapper){
         super()
-        const material = new SpriteMaterial({ map: isValidTexture(texture)?texture(texture):null });
+        const material = new SpriteMaterial({ map: isValidTexture(mapper)?texture(mapper):null });
         this.element = new Sprite(material); 
     }
     isSprite(){

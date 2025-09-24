@@ -2,3 +2,27 @@ body{
     margin: 0px;
     overflow: hidden;
 }
+span{
+    width : 700px;
+    border : 1px darkblue solid;
+    text-align: center;
+}
+/* span, img{
+    border : 4px darkblue solid;
+    color : black;
+    background-color: black;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    align-content: center;
+    text-align : center;
+    border-radius: 50%;
+    z-index:2;
+}
+span:hover{
+    background: whitesmoke;
+    color: red;
+    width : 400px;
+    height: 400px; 
+    z-index:2;
+} */

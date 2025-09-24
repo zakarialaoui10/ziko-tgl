@@ -4,9 +4,9 @@ import {
   // useLightHelper
 } from "ziko-tgl"
 
-import {text2} from 'ziko-tgl/core/object-3d/primitives/text/index.js'
+import {text2, sprite} from 'ziko-tgl/core/object-3d/primitives'
 
-import { TGLMapControl } from "ziko-tgl/extra/camera-controls/map.js"
+import { map_ctrl } from "ziko-tgl/extra/camera-controls/map.js"
 
 globalThis.SCENE = SceneGl("100vw", "100vh").useShadow();
 globalThis.im1 = tags.img({src : "/im.png"});
@@ -27,9 +27,9 @@ const L = directional_light(0xffffff, 5).pos(0, 3, 0).castShadow();
 SCENE.add(
   Floor, C1, C2, L, text2("Hello world").style({
     color : 'red'
-  })
+  }),
+  sprite(t1)
   // useLightHelper(L)
 );
 
-SCENE.useControl(TGLMapControl)
-// SCENE.useMapControls()
+globalThis.ctrl = map_ctrl(SCENE)
