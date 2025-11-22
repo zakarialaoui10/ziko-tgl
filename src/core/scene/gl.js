@@ -56,7 +56,7 @@ class TGLScene extends UIElement{
         this.renderGl()
         // this.render();
         this.size(w,h);
-        this.watchSize(()=>this.maintain())
+        // this.watchSize(()=>this.maintain())  // Shoule be fixed
         this.style({
             margin:0
         })

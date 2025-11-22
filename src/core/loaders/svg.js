@@ -1,12 +1,11 @@
 import { SVGLoader } from "three/examples/jsm/loaders/SVGLoader.js";
-import {ZikoUISvg} from "ziko";
+import { UIElement } from "ziko/ui";
 const loadSVG=svg=>{
     let element=null;
     let shapes = [];
     const loader = new SVGLoader();
-    if(svg instanceof ZikoUISvg) {
-        element=svg.element.outerHTML;
-    }
+    if(svg instanceof UIElement ) element = svg.element.outerHTML;
+    
     if(svg instanceof HTMLElement) element = svg.outerHTML;
     const svgData = loader.parse(element);
     svgData.paths.forEach((path, i) => {

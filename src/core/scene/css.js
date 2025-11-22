@@ -1,5 +1,6 @@
 import { UIElement } from "ziko";
-import * as THREE from "three"
+// import * as THREE from "three"
+import { Scene } from "three";
 import { CSS3DRenderer } from 'three/addons/renderers/CSS3DRenderer.js';
 import { TGLScene } from "./gl.js";
 import { ui3 } from "../object-3d/index"
@@ -7,11 +8,11 @@ import { TglObject3D } from "../object-3d/tgl-object3d.js";
 class TGLSceneCss extends TGLScene{
     constructor(w,h){
         super(w,h)
-        this.sceneCss=new THREE.Scene();
+        this.sceneCss=new Scene();
         this.rendererCss=new CSS3DRenderer();
         this.rendererCss.domElement.appendChild(this.rendererGl.domElement );
         this.rendererTarget=this.rendererCss;
-        this.canvas.setTarget(this.element)
+        this.canvas.render(this.element)
         this.element.appendChild(this.rendererCss.domElement);
         this.canvas.style({
             position:"absolute"
