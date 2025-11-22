@@ -1,8 +1,8 @@
 import { TransformControls } from 'three/addons/controls/TransformControls.js';
 import { ZikoThreeLightHelper } from "../../object-3d/helpers/index.js"
-import { __ZikoThreeObjectControls__ } from './ziko-three-objects-control.js';
+import { __TGLObjectControls__ } from './ziko-three-objects-control.js';
 import { TglObject3D } from '../../object-3d/tgl-object3d.js';
-class ZikoThreeTransformControls extends __ZikoThreeObjectControls__{
+class ZikoThreeTransformControls extends __TGLObjectControls__{
     constructor(target){
         super(target)
         this.control=new TransformControls(target.camera.currentCamera,target.rendererGl.domElement);

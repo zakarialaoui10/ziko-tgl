@@ -1,6 +1,6 @@
 import { __TGLControls__ } from "../tgl-controls.js";
 
-class __ZikoThreeObjectControls__ extends __TGLControls__{
+class __TGLObjectControls__ extends __TGLControls__{
     constructor(target){
         super(target)
         this.cache={
@@ -8,5 +8,5 @@ class __ZikoThreeObjectControls__ extends __TGLControls__{
     }
 }
 export{
-    __ZikoThreeObjectControls__
+    __TGLObjectControls__
 }

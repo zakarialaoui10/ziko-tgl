@@ -15,7 +15,8 @@
       "import": "./src/core/index.js"
     },
     "./*": {
-      "import": "./src/*/index.js"
+      "import": "./src/*/index.js",
+      "types": "./types/*/index.d.ts"
     },
     "./dist": {
       "import": "./dist/ziko-tgl.mjs",

@@ -308,7 +308,10 @@ class TGLScene extends UIElement{
         return this;
     }
 }
-const SceneGl=(w,h)=>new TGLScene(w,h)
+const SceneGl=(w,h)=>{
+    if(typeof w === 'object') return new TGLScene(w?.width, w?.height);
+    return new TGLScene(w,h)
+}
 export {
     TGLScene,
     SceneGl
