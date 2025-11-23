@@ -1,6 +1,6 @@
 import { HTMLMesh } from 'three/examples/jsm/Addons.js';
 import { TglObject3D } from '../tgl-object3d';
-class ZikoThreHTMLMesh extends TglObject3D{
+class TGLHTMLMesh extends TglObject3D{
     constructor(UIElement){
         super()
         this.cache={
@@ -8,9 +8,12 @@ class ZikoThreHTMLMesh extends TglObject3D{
         }
         this.element=new HTMLMesh(UIElement.element)
     }
+    isTGLHTMLMesh(){
+        return true;
+    }
     get type(){
 		return "html";
 	}
 }
-const html_mesh=UIElement=>new ZikoThreHTMLMesh(UIElement)
+const html_mesh=UIElement=>new TGLHTMLMesh(UIElement)
 export {html_mesh}

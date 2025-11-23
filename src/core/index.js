@@ -27,7 +27,7 @@ export * from "./use/index.js"
 //     useBoxVectorHelper,
 //     useArrowHelper,
 //     useLightHelper
-// } from "./object-3d/ZikoThreeHelper/index.js"
+// } from "./object-3d/TGLHelper/index.js"
 // import { 
 //     useCoordinates,
 //     texture,

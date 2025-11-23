@@ -14,6 +14,9 @@ class TGLText extends TGLPrimitives{
         super()
         this.text = text;
     }
+    isTGLText(){
+        return true
+    }
     get type(){
         return "text";
     }

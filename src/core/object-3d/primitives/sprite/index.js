@@ -11,7 +11,7 @@ class TGLSprite extends TGLPrimitives{
         const material = new SpriteMaterial({ map: isValidTexture(mapper)?texture(mapper):null });
         this.element = new Sprite(material); 
     }
-    isSprite(){
+    isTGLSprite(){
         return true;
     }
     get type(){

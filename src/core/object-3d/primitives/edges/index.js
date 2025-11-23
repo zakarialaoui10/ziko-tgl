@@ -6,22 +6,22 @@ import {
 import { TGLMesh } from "../mesh/index.js";
 import { TGLPrimitives } from "../tgl-primitives.js";
 class TGLEdges extends TGLPrimitives{
-    constructor(ZikoMesh){
+    constructor(tgl_mesh){
         super()
-        if(ZikoMesh instanceof TGLMesh){
-            const Geometry = new EdgesGeometry(ZikoMesh.element.geometry);
-            const Material = new LineBasicMaterial(ZikoMesh.cache.materialAttributes);
+        if(tgl_mesh instanceof TGLMesh){
+            const Geometry = new EdgesGeometry(tgl_mesh.element.geometry);
+            const Material = new LineBasicMaterial(tgl_mesh.cache.materialAttributes);
             this.element = new LineSegments(Geometry, Material);
         }
     }
-    isEdge(){
+    isTGLEdge(){
         return true
     }
     get type(){
         return "edges";
     }
 }
-const edges=ZikoMesh=>new TGLEdges(ZikoMesh);
+const edges=tgl_mesh=>new TGLEdges(tgl_mesh);
 export{
     edges
 }

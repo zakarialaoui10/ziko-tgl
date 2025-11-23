@@ -15,6 +15,9 @@ class TglLight extends TglObject3D {
     get type(){
         return "light";
     }
+    isTGLLight(){
+        return true;
+    }
     clone(){
         const OBJECT = new this.constructor();
         OBJECT.__proto__=this.__proto__;

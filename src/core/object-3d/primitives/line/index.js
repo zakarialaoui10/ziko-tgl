@@ -12,7 +12,7 @@ class TGLLine extends TGLPrimitives{
         let geometry = BufferGeometry().setFromPoints(points);
         this.element = Line(geometry);
     }
-    isLine(){
+    isTGLLine(){
         return true;
     }
     get type(){

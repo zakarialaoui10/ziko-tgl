@@ -13,6 +13,9 @@ class TGLGroupe extends TglObject3D{
 			type:"groupe"
 		})
 	}
+	isTGLGroup(){
+		return true;
+	}
 	get type(){
 		return "groupe";
 	}

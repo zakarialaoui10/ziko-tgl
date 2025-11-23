@@ -29,7 +29,7 @@ class TGLMesh extends TGLPrimitives {
         super();
         this.element = new Mesh(Geometry, Material);
     }
-    isMesh(){
+    isTGLMEsh(){
         return true;
     }
     get type() {

@@ -8,6 +8,9 @@ class TGLCss extends TglObject3D{
         }
         this.element=new CSS3DObject(UIElement.element)
     }
+    isTGLCssObject(){
+        return true;
+    }
     get type(){
 		return "css";
 	}

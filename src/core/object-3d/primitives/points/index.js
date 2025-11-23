@@ -9,7 +9,7 @@ class TGLPoints extends TGLPrimitives{
     constructor(){
         super();
     }
-    isPoints(){
+    isTGLPoints(){
         return true;
     }
     get type(){

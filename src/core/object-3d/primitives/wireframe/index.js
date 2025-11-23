@@ -14,6 +14,9 @@ class TGLWireframe extends TglObject3D{
             this.element=new LineSegments(Geometry, Material);
         }   
     }
+    isTGLWireframe(){
+        return true
+    }
     get type(){
         return "wireframe"
     }

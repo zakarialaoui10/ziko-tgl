@@ -9,6 +9,9 @@ class __TGLControls__{
     get name(){
         return this.cache.name
     }
+    isTGLControl(){
+        return true;
+    }
     get type(){
         return "controls";
     }

@@ -15,9 +15,12 @@ import {
     PointLightHelper,
  } from "three";
 import { TglObject3D } from "../tgl-object3d";
-class ZikoThreeHelper extends TglObject3D{
+class TGLHelper extends TglObject3D{
     constructor(){
         super()
+    }
+    isTGLHelper(){
+        return true;
     }
     get type(){
         return "helper";
@@ -29,7 +32,7 @@ class ZikoThreeHelper extends TglObject3D{
         return OBJECT
     }
 }
-class ZikoThreeAxesHelper extends ZikoThreeHelper{
+class ZikoThreeAxesHelper extends TGLHelper{
     constructor(size){
         super()
         Object.assign(this.cache,{
@@ -38,7 +41,7 @@ class ZikoThreeAxesHelper extends ZikoThreeHelper{
         this.element=new AxesHelper(size);
     }
 }
-class ZikoThreeGridHelper extends ZikoThreeHelper{
+class ZikoThreeGridHelper extends TGLHelper{
     constructor(n,m,color1,color2){
         super()
         Object.assign(this.cache,{
@@ -47,7 +50,7 @@ class ZikoThreeGridHelper extends ZikoThreeHelper{
         this.element=new GridHelper(n,m,color1,color2);
     }
 }
-class ZikoThreePolarHelper extends ZikoThreeHelper{
+class ZikoThreePolarHelper extends TGLHelper{
     constructor(radius,radials,circles,divisions){
         super()
         Object.assign(this.cache,{
@@ -57,7 +60,7 @@ class ZikoThreePolarHelper extends ZikoThreeHelper{
 
     }
 }
-class ZikoThreePlaneHelper extends ZikoThreeHelper{
+class ZikoThreePlaneHelper extends TGLHelper{
     constructor(V,size,color){
         super()
         Object.assign(this.cache,{
@@ -67,7 +70,7 @@ class ZikoThreePlaneHelper extends ZikoThreeHelper{
         this.element=new PlaneHelper(this.plane,size,color);
     }
 }
-class ZikoThreeBoxHelper extends ZikoThreeHelper{
+class ZikoThreeBoxHelper extends TGLHelper{
     constructor(ZikoGlObject,color){
         super()
         Object.assign(this.cache,{
@@ -79,7 +82,7 @@ class ZikoThreeBoxHelper extends ZikoThreeHelper{
         return this
     }
 }
-class ZikoThreeBox3Helper extends ZikoThreeHelper{
+class ZikoThreeBox3Helper extends TGLHelper{
     constructor(V0,V1,color){
         super()
         Object.assign(this.cache,{
@@ -89,7 +92,7 @@ class ZikoThreeBox3Helper extends ZikoThreeHelper{
         this.element=new Box3Helper(this.box,color);
     }
 }
-class ZikoThreeArrowHelper extends ZikoThreeHelper{
+class ZikoThreeArrowHelper extends TGLHelper{
     constructor(originVector,directionVector,length,color){
         super()
         Object.assign(this.cache,{
@@ -98,7 +101,7 @@ class ZikoThreeArrowHelper extends ZikoThreeHelper{
         this.element=new ArrowHelper(new Vector3(...directionVector),new Vector3(...originVector),length,color)
     }
 }
-class ZikoThreeLightHelper extends ZikoThreeHelper{
+class ZikoThreeLightHelper extends TGLHelper{
     constructor(ZikoLight,color,size){
         super()
         Object.assign(this.cache,{
