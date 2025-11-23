@@ -2,7 +2,7 @@ __Ziko__.ExtractAll();
 __ZikoGl__.ExtractAll();
 __Ziko__.__Config__.setDefault({ target: document.body });
 
-SCENE = SceneGl("100vw", "100vh").useShadow();
+SCENE = scene_gl("100vw", "100vh").useShadow();
 
 im1 = image("im.png");
 im1.st.hide();

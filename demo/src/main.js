@@ -1,14 +1,16 @@
 import {tags, PI} from "ziko"
+
+import { SceneGl } from "ziko-tgl/jsx-adapter"
 import {
-  SceneGl, texture, plane3, cube3, directional_light, 
+  scene_gl, texture, plane3, cube3, directional_light, 
   // useLightHelper
 } from "ziko-tgl"
 
-import {text2, sprite} from 'ziko-tgl/core/object-3d/primitives'
+import {text2, sprite} from 'ziko-tgl/object-3d/primitives'
 
 import { map_ctrl } from "ziko-tgl/extra/camera-controls/map.js"
 
-globalThis.SCENE = SceneGl("100vw", "100vh").useShadow();
+globalThis.SCENE = scene_gl("100vw", "100vh").useShadow();
 globalThis.im1 = tags.img({src : "/im.png"});
 // im1.st.hide();
 const t1 = texture(im1);

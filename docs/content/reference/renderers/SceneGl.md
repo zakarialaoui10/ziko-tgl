@@ -1,13 +1,13 @@
-The `SceneGl` element is the root of your `ZikoGl` scene and is an instance of [UIElement](). 
-It acts as the foundational container for all 3D components in your scene, including objects, lights, and cameras. As a UIElement, it inherits properties and methods that allow it to interact seamlessly within the `Ziko.js` framework. By adding other elements to the SceneGl, you build up the scene that will be rendered and displayed.
+The `scene_gl` element is the root of your `ZikoGl` scene and is an instance of [UIElement](). 
+It acts as the foundational container for all 3D components in your scene, including objects, lights, and cameras. As a UIElement, it inherits properties and methods that allow it to interact seamlessly within the `Ziko.js` framework. By adding other elements to the scene_gl, you build up the scene that will be rendered and displayed.
 
 ## Overview 
 ```js
- import {SceneGl} from "zikogl";
+ import {scene_gl} from "zikogl";
  const WIDTH = innerWidth;
  const HEIGHT = innerHeight;
  const BACKGROUND = 0x222222;
- const SCENE = SceneGl(WIDTH,HEIGHT,BACKGROUND);
+ const SCENE = scene_gl(WIDTH,HEIGHT,BACKGROUND);
  const C1= cube3(1).style({
     color : 0x5555ee
  }).posX(-2)
@@ -17,7 +17,7 @@ It acts as the foundational container for all 3D components in your scene, inclu
  SCENE.add(C1,C2);
 ```
 
-The SceneGl element in ZikoGl provides a comprehensive set of features for managing camera controls, switching between different cameras, and interacting with your 3D scene. Here’s what it offers : 
+The scene_gl element in ZikoGl provides a comprehensive set of features for managing camera controls, switching between different cameras, and interacting with your 3D scene. Here’s what it offers : 
 
 ## Camera Switching :
 You can switch between the two supported camers in `zikogl` using the following methodes :  
@@ -26,7 +26,7 @@ You can switch between the two supported camers in `zikogl` using the following 
 
  ***`📦 .useOrthographicCamera()`:*** Switches to an orthographic camera, where objects are rendered without perspective distortion, useful for technical and architectural visualization.
 
- ***`🗃️ .currentCamera`:*** This getter returns the camera instance currently in use within the SceneGl. It provides direct access to the camera being used for rendering the scene, allowing you to modify its properties or perform operations such as adjusting its position, rotation, or field of view.
+ ***`🗃️ .currentCamera`:*** This getter returns the camera instance currently in use within the scene_gl. It provides direct access to the camera being used for rendering the scene, allowing you to modify its properties or perform operations such as adjusting its position, rotation, or field of view.
 
  ## Multiple Camera Controls:
   You can easily switch between different control schemes to suit various interaction needs. When switching controls, the previously active control will be disabled to prevent conflicts. Here’s how you can switch between the available control schemes:
@@ -63,9 +63,9 @@ You can switch between the two supported camers in `zikogl` using the following 
 
  ## Object Maniulation 
 
-  ***`📦 .add( ...ZikoGl3DObject)`:*** Adds one or more ZikoGl3DObject instances to the scene. This method integrates the specified objects into the SceneGl, making them part of the rendered scene.
+  ***`📦 .add( ...ZikoGl3DObject)`:*** Adds one or more ZikoGl3DObject instances to the scene. This method integrates the specified objects into the scene_gl, making them part of the rendered scene.
 
-  ***`📦 .remove( ...ZikoGl3DObject)`:*** Removes one or more ZikoGl3DObject instances from the scene. This method detaches the specified objects from the SceneGl, ensuring they are no longer rendered.
+  ***`📦 .remove( ...ZikoGl3DObject)`:*** Removes one or more ZikoGl3DObject instances from the scene. This method detaches the specified objects from the scene_gl, ensuring they are no longer rendered.
 
   ***`.items`*** : This property holds an array of all ZikoGl3DObject instances currently in the scene.
 
@@ -73,7 +73,7 @@ You can switch between the two supported camers in `zikogl` using the following 
 
  ## Inherited Methodes
 
- The SceneGl element inherits methods from UIElement, which allow for effective manipulation and interaction with the elements within the scene. Here’s a closer look at these inherited methods:
+ The scene_gl element inherits methods from UIElement, which allow for effective manipulation and interaction with the elements within the scene. Here’s a closer look at these inherited methods:
 
   ### Object Manipulation 
 
@@ -86,11 +86,11 @@ You can switch between the two supported camers in `zikogl` using the following 
 
 <!-- ## Recap 
  ```js
-  import {SceneGl} from "zikogl";
+  import {scene_gl} from "zikogl";
   const WIDTH = innerWidth;
   const HEIGHT = innerHeight;
   const BACKGROUND = 0x222222;
-  const SCENE = SceneGl(WIDTH,HEIGHT,BACKGROUND)
+  const SCENE = scene_gl(WIDTH,HEIGHT,BACKGROUND)
                 .useMapControls()
                 .useFog(0xeeeeee,1,100)
   const C1= cube3(1).style({

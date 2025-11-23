@@ -6,7 +6,7 @@ class ZikoThreeTransformControls extends __TGLObjectControls__{
     constructor(target){
         super(target)
         this.control=new TransformControls(target.camera.currentCamera,target.rendererGl.domElement);
-        this.__TARGET__.sceneGl.add(this.control);
+        this.__TARGET__.scene_gl.add(this.control);
         this.isPaused=false;
         this.mode="translate";
         this.onChange();
@@ -15,7 +15,7 @@ class ZikoThreeTransformControls extends __TGLObjectControls__{
         })
     }
     add(){
-        this.__TARGET__.sceneGl.add(this.control);
+        this.__TARGET__.scene_gl.add(this.control);
         return this;  
     }
     onChange(handler){

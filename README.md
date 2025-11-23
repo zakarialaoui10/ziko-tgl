@@ -4,10 +4,10 @@ ziko-tgl is a [Zikojs](https://github.com/zakarialaoui10/ziko.js) plugin built o
 ## Scene
 ziko-tgl provides a variety of scene setups to meet diverse rendering needs. Scenes in ziko-tgl are an instance of ZikoElement, allowing you to utilize all ZikoElement methods.
 Here are the main scene types:
- ### SceneGl
- SceneGl is used for creating standard WebGL scenes. It supports adding 3D objects and includes various controls for interacting with the scene.
+ ### scene_gl
+ scene_gl is used for creating standard WebGL scenes. It supports adding 3D objects and includes various controls for interacting with the scene.
  ```js
-   gl=SceneGl(WIDTH,HEIGHT,BACKGROUND)
+   gl=scene_gl(WIDTH,HEIGHT,BACKGROUND)
    gl.add(/* ...ziko-tglObject */)
    gl.useMapControls() 
    gl.useOrthographicCamera() 

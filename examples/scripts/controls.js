@@ -2,7 +2,7 @@ __Ziko__.ExtractAll()
 __ZikoGl__.ExtractAll()
 __Ziko__.__Config__.setDefault({target:document.body})
 
-SCENE = SceneGl("100vw","80vh");
+SCENE = scene_gl("100vw","80vh");
 im=image("im.png")
 et=image("textured-world-map-stockcake.jpg")
 im.st.hide()  // FIX this

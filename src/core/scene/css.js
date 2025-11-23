@@ -44,7 +44,7 @@ class TGLSceneCss extends TGLScene{
 		obj.map(n=>{
 			if(n instanceof TglObject3D){
                 if(n.cache.type==="gl"){
-                    this.sceneGl.add(n.element);
+                    this.scene_gl.add(n.element);
                     rerenderGl=true;
                 }
                 else if(n.cache.type==="css"){
@@ -68,7 +68,7 @@ class TGLSceneCss extends TGLScene{
 		obj.map((n,i)=>{
             if(n.cache.type==="gl"){
                 rerenderGl=true;
-                this.sceneGl.remove(obj[i].element);
+                this.scene_gl.remove(obj[i].element);
             }
             else if(n.cache.type==="css"){
                 rerenderCss=true;

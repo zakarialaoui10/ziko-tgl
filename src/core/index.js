@@ -7,7 +7,7 @@ export * from "./object-3d/index.js"
 export * from "./use/index.js"
 
 // // import * as THREE from "three"
-// import { SceneGl } from "./scene/gl.js";
+// import { scene_gl } from "./scene/gl.js";
 // import { SceneCss } from "./scene/css.js";
 // import { loadSVG } from "./loaders/svg.js";
 // import { 
@@ -72,7 +72,7 @@ export * from "./use/index.js"
 //     // text3,
 //     // text2,
 //     loadSVG,
-//     SceneGl,
+//     scene_gl,
 //     SceneCss,
 //     cube3,
 //     plane3,

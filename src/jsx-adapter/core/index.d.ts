@@ -1,0 +1,1 @@
+export type * from './scene/index.d.ts'

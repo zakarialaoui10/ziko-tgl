@@ -48,11 +48,11 @@ class TGLScene extends UIElement{
         this.canvas = tags.canvas().render(this.element)
         this.rendererGl = new WebGLRenderer({canvas:this.canvas.element});
         this.rendererTarget = this.rendererGl;
-		this.sceneGl = new Scene();
+		this.scene_gl = new Scene();
         this.camera = camera(w,h,0.1,1000);
         this.camera.currentCamera.position.z = 10;
         this.camera.parent = this;
-        this.sceneGl.background = new Color("#3333ee");
+        this.scene_gl.background = new Color("#3333ee");
         this.renderGl()
         // this.render();
         this.size(w,h);
@@ -73,22 +73,22 @@ class TGLScene extends UIElement{
         return this.cache.currentCameraControls;
     }
     get px(){
-        return this.sceneGl.position.x;
+        return this.scene_gl.position.x;
     }
     get py(){
-        return this.sceneGl.position.y;
+        return this.scene_gl.position.y;
     }
     get pz(){
-        return this.sceneGl.position.z;
+        return this.scene_gl.position.z;
     }
     get rx(){
-        return this.sceneGl.rotation.x;
+        return this.scene_gl.rotation.x;
     }
     get ry(){
-        return this.sceneGl.rotation.y;
+        return this.scene_gl.rotation.y;
     }
     get rz(){
-        return this.sceneGl.rotation.z;
+        return this.scene_gl.rotation.z;
     }
     clone(){
         const SCENE = new this.constructor(...this.cache.args);
@@ -108,17 +108,17 @@ class TGLScene extends UIElement{
         return this;
     }
     renderGl(){
-		this.rendererGl.render(this.sceneGl,this.camera.currentCamera);
+		this.rendererGl.render(this.scene_gl,this.camera.currentCamera);
 		return this;
 	}
     add(...obj){
 		obj.map((n,i)=>{
 			if(n instanceof TglObject3D){
-				this.sceneGl.add(obj[i].element);
+				this.scene_gl.add(obj[i].element);
 				this.items.push(obj[i]);
 				n.parent=this;
 			}
-			else this.sceneGl.add(obj[i])
+			else this.scene_gl.add(obj[i])
 		});
         this.maintain();
 		return this;
@@ -128,7 +128,7 @@ class TGLScene extends UIElement{
             if(this.Target.children.length) this.Target.removeChild(this.element);
           }
         else {
-            obj.map((n,i)=>this.sceneGl.remove(obj[i].element));
+            obj.map((n,i)=>this.scene_gl.remove(obj[i].element));
             this.items=this.items.filter(n=>!obj.includes(n));
             this.maintain();
         }
@@ -150,49 +150,49 @@ class TGLScene extends UIElement{
     }
     background(texture){
         if(["string","number"].includes(typeof texture)){
-            if((texture.length===7||texture.length===4)&&texture[0]==="#")this.sceneGl.background=new Color(texture);
+            if((texture.length===7||texture.length===4)&&texture[0]==="#")this.scene_gl.background=new Color(texture);
         }
-        if(isValidTexture(texture))this.sceneGl.background=texture(texture);
+        if(isValidTexture(texture))this.scene_gl.background=texture(texture);
         this.renderGl();
         return this;
     }
     posX(x=this.px,render=true){
-        this.sceneGl.position.x=x;
+        this.scene_gl.position.x=x;
         if(render)this.renderGl();
         return this;
     }
     posY(y=this.py,render=true){
-        this.sceneGl.position.y=y;
+        this.scene_gl.position.y=y;
         if(render)this.renderGl();
         return this;
     }
     posZ(z=this.pz,render=true){
-        this.sceneGl.position.z=z;
+        this.scene_gl.position.z=z;
         if(render)this.renderGl();
         return this;
     }
     pos(x,y,z,render=true){
-        this.sceneGl.position.set(x,y,z);
+        this.scene_gl.position.set(x,y,z);
         if(render)this.renderGl();
         return this;
     }
     tarnslateX(dx=0,render=true){
-        this.sceneGl.position.x=this.px+dx;
+        this.scene_gl.position.x=this.px+dx;
         if(render)this.renderGl();
         return this;
     }
     translateY(dy=0,render=true){
-        this.sceneGl.position.y=this.py+dy;
+        this.scene_gl.position.y=this.py+dy;
         if(render)this.renderGl();
         return this;
     }
     translateZ(dz=0,render=true){
-        this.sceneGl.position.z=this.pz+dz;
+        this.scene_gl.position.z=this.pz+dz;
         if(render)this.renderGl();
         return this;
     }
     translate(dx=0,dy=0,dz=0,render=true){
-        this.sceneGl.rotation.set(
+        this.scene_gl.rotation.set(
             this.px+dx,
             this.py+dy,
             this.pz+dz,
@@ -201,31 +201,31 @@ class TGLScene extends UIElement{
         return this;
     }
     rotX(x=this.rx,render=true){
-        this.sceneGl.rotation.x=x;
+        this.scene_gl.rotation.x=x;
         if(render)this.renderGl();
         return this;
     }
     rotY(y=this.ry,render=true){
-        this.sceneGl.rotation.y=y;
+        this.scene_gl.rotation.y=y;
         if(render)this.renderGl();
         return this;            
     }
     rotZ(z=this.rz,render=true){
-        this.sceneGl.rotation.z=z;
+        this.scene_gl.rotation.z=z;
         if(render)this.renderGl();
         return this;            
     }
     rot(x,y,z){
-        this.sceneGl.rotation.set(x,y,z);
+        this.scene_gl.rotation.set(x,y,z);
         if(render)this.renderGl();
         return this;
     }
     useFog(color,near,far){
-        this.sceneGl.fog = new Fog(color,near,far);
+        this.scene_gl.fog = new Fog(color,near,far);
         return this;
     }
     useFogExp2(color,density){
-        this.sceneGl.fog = new FogExp2(color,density);
+        this.scene_gl.fog = new FogExp2(color,density);
         return this;
     }
     useShadow(type=PCFSoftShadowMap){
@@ -308,11 +308,8 @@ class TGLScene extends UIElement{
         return this;
     }
 }
-const SceneGl=(w,h)=>{
-    if(typeof w === 'object') return new TGLScene(w?.width, w?.height);
-    return new TGLScene(w,h)
-}
+const scene_gl=(w,h)=> new TGLScene(w,h) 
 export {
     TGLScene,
-    SceneGl
+    scene_gl
 }
