@@ -24,6 +24,7 @@ const Floor = plane3(10, 10)
 const C1 = cube3(1).pos(-1, 2, 0).useMeshStandardMaterial().useShadow();
 const C2 = cube3(1).pos(0, 1, 0).useMeshStandardMaterial().useShadow();
 const L = directional_light(0xffffff, 5).pos(0, 3, 0).castShadow();
+
 SCENE.add(
   Floor, C1, C2, L, text2("Hello world").style({
     color : 'red'
