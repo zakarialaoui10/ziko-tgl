@@ -1,7 +1,7 @@
 import { DragControls } from 'three/addons/controls/DragControls.js';
 import { __TGLObjectControls__ } from './ziko-three-objects-control';
 
-class ZikoThreeDragControls extends __TGLObjectControls__{
+class TGLDragControls extends __TGLObjectControls__{
     constructor(target,ZikoGlElements) {
         super(target);
         this.elements=ZikoGlElements;
@@ -80,7 +80,7 @@ class ZikoThreeDragControls extends __TGLObjectControls__{
     return this;
     }
 }
-const ZikoDragControls = (target,objects) => new ZikoThreeDragControls(target,objects)
+const ZikoDragControls = (target,objects) => new TGLDragControls(target,objects)
 const useDragControls = (objects)=>{
     const SCENE = objects[0].parent;
     const CTRL = ZikoDragControls(SCENE,objects);

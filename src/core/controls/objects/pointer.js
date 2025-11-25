@@ -1,6 +1,6 @@
 import { PointerControls } from './custom-controls/pointer-control';
 import { __TGLObjectControls__ } from './ziko-three-objects-control';
-class ZikoThreePointerControls extends __TGLObjectControls__{
+class TGLPointerControls extends __TGLObjectControls__{
     constructor(target,ZikoGlElements) {
         super(target);
         this.elements=ZikoGlElements;
@@ -73,7 +73,7 @@ class ZikoThreePointerControls extends __TGLObjectControls__{
     return this;
     }
 }
-const ZikoPointerControls = (target,objects) => new ZikoThreePointerControls(target,objects)
+const ZikoPointerControls = (target,objects) => new TGLPointerControls(target,objects)
 const usePointerControls = (objects)=>{
     const SCENE = objects[0].parent;
     const CTRL = ZikoPointerControls(SCENE,objects);

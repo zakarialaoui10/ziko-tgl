@@ -32,7 +32,7 @@ class TGLHelper extends TglObject3D{
         return OBJECT
     }
 }
-class ZikoThreeAxesHelper extends TGLHelper{
+class TGLAxesHelper extends TGLHelper{
     constructor(size){
         super()
         Object.assign(this.cache,{
@@ -41,7 +41,7 @@ class ZikoThreeAxesHelper extends TGLHelper{
         this.element=new AxesHelper(size);
     }
 }
-class ZikoThreeGridHelper extends TGLHelper{
+class TGLGridHelper extends TGLHelper{
     constructor(n,m,color1,color2){
         super()
         Object.assign(this.cache,{
@@ -50,7 +50,7 @@ class ZikoThreeGridHelper extends TGLHelper{
         this.element=new GridHelper(n,m,color1,color2);
     }
 }
-class ZikoThreePolarHelper extends TGLHelper{
+class TGLPolarHelper extends TGLHelper{
     constructor(radius,radials,circles,divisions){
         super()
         Object.assign(this.cache,{
@@ -60,7 +60,7 @@ class ZikoThreePolarHelper extends TGLHelper{
 
     }
 }
-class ZikoThreePlaneHelper extends TGLHelper{
+class TGLPlaneHelper extends TGLHelper{
     constructor(V,size,color){
         super()
         Object.assign(this.cache,{
@@ -70,7 +70,7 @@ class ZikoThreePlaneHelper extends TGLHelper{
         this.element=new PlaneHelper(this.plane,size,color);
     }
 }
-class ZikoThreeBoxHelper extends TGLHelper{
+class TGLBoxHelper extends TGLHelper{
     constructor(ZikoGlObject,color){
         super()
         Object.assign(this.cache,{
@@ -82,7 +82,7 @@ class ZikoThreeBoxHelper extends TGLHelper{
         return this
     }
 }
-class ZikoThreeBox3Helper extends TGLHelper{
+class TGLBox3Helper extends TGLHelper{
     constructor(V0,V1,color){
         super()
         Object.assign(this.cache,{
@@ -92,7 +92,7 @@ class ZikoThreeBox3Helper extends TGLHelper{
         this.element=new Box3Helper(this.box,color);
     }
 }
-class ZikoThreeArrowHelper extends TGLHelper{
+class TGLArrowHelper extends TGLHelper{
     constructor(originVector,directionVector,length,color){
         super()
         Object.assign(this.cache,{
@@ -101,7 +101,7 @@ class ZikoThreeArrowHelper extends TGLHelper{
         this.element=new ArrowHelper(new Vector3(...directionVector),new Vector3(...originVector),length,color)
     }
 }
-class ZikoThreeLightHelper extends TGLHelper{
+class TGLLightHelper extends TGLHelper{
     constructor(ZikoLight,color,size){
         super()
         Object.assign(this.cache,{
@@ -122,14 +122,14 @@ class ZikoThreeLightHelper extends TGLHelper{
         return this
     }
 }
-const useAxesHelper=(size)=>new ZikoThreeAxesHelper(size);
-const useGridHelper=(N,M,color1,color2)=>new ZikoThreeGridHelper(N,M,color1,color2);
-const usePolarHelper=(radius,radials,circles,divisions)=>new ZikoThreePolarHelper(radius,radials,circles,divisions);
-const usePlaneHelper=(V,size,color)=>new ZikoThreePlaneHelper(V,size,color);
-const useBoxHelper=(ZikoGlObject,color)=>new ZikoThreeBoxHelper(ZikoGlObject,color);
-const useBoxVectorHelper=(V0=[0,0,0],V1=[1,1,1],color=0x222222)=>new ZikoThreeBox3Helper(V0,V1,color);
-const useArrowHelper=(originVector,directionVector,length,color)=>new ZikoThreeArrowHelper(originVector,directionVector,length,color);
-const useLightHelper=(ZikoLight,color,size)=>new ZikoThreeLightHelper(ZikoLight,color,size);
+const useAxesHelper=(size)=>new TGLAxesHelper(size);
+const useGridHelper=(N,M,color1,color2)=>new TGLGridHelper(N,M,color1,color2);
+const usePolarHelper=(radius,radials,circles,divisions)=>new TGLPolarHelper(radius,radials,circles,divisions);
+const usePlaneHelper=(V,size,color)=>new TGLPlaneHelper(V,size,color);
+const useBoxHelper=(ZikoGlObject,color)=>new TGLBoxHelper(ZikoGlObject,color);
+const useBoxVectorHelper=(V0=[0,0,0],V1=[1,1,1],color=0x222222)=>new TGLBox3Helper(V0,V1,color);
+const useArrowHelper=(originVector,directionVector,length,color)=>new TGLArrowHelper(originVector,directionVector,length,color);
+const useLightHelper=(ZikoLight,color,size)=>new TGLLightHelper(ZikoLight,color,size);
 export{
     useAxesHelper,
     useGridHelper,
@@ -139,5 +139,5 @@ export{
     useBoxVectorHelper,
     useArrowHelper,
     useLightHelper,
-    ZikoThreeLightHelper,
+    TGLLightHelper,
 }

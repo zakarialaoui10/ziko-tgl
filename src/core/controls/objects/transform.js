@@ -1,8 +1,8 @@
 import { TransformControls } from 'three/addons/controls/TransformControls.js';
-import { ZikoThreeLightHelper } from "../../object-3d/helpers/index.js"
+import { TGLLightHelper } from "../../object-3d/helpers/index.js"
 import { __TGLObjectControls__ } from './ziko-three-objects-control.js';
 import { TglObject3D } from '../../object-3d/tgl-object3d.js';
-class ZikoThreeTransformControls extends __TGLObjectControls__{
+class TGLTransformControls extends __TGLObjectControls__{
     constructor(target){
         super(target)
         this.control=new TransformControls(target.camera.currentCamera,target.rendererGl.domElement);
@@ -46,7 +46,7 @@ class ZikoThreeTransformControls extends __TGLObjectControls__{
         return this;
     }
     attach(obj){
-        if(obj instanceof ZikoThreeLightHelper)this.control.attach(obj.attached_light);
+        if(obj instanceof TGLLightHelper)this.control.attach(obj.attached_light);
         else this.control.attach(obj.element);
         return this;
     }
@@ -82,10 +82,10 @@ class ZikoThreeTransformControls extends __TGLObjectControls__{
     } 
 }
 
-const ZikoTransformControls=target=>new ZikoThreeTransformControls(target);
+const ZikoTransformControls=target=>new TGLTransformControls(target);
 const useTransformControls=(child,mode)=>{
-    if(child instanceof TglObject3D)return new ZikoThreeTransformControls(child.parent).attach(child).setMode(mode);
-    return new ZikoThreeTransformControls(child).setMode(mode)
+    if(child instanceof TglObject3D)return new TGLTransformControls(child.parent).attach(child).setMode(mode);
+    return new TGLTransformControls(child).setMode(mode)
     
 }
 export {
