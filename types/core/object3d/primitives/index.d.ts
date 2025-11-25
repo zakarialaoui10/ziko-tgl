@@ -1,0 +1,1 @@
+export type * from './mesh/index.d.ts'

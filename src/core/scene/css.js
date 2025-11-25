@@ -1,5 +1,4 @@
 import { UIElement } from "ziko";
-// import * as THREE from "three"
 import { Scene } from "three";
 import { CSS3DRenderer } from 'three/addons/renderers/CSS3DRenderer.js';
 import { TGLScene } from "./gl.js";

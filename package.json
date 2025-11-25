@@ -1,6 +1,6 @@
 {
   "name": "ziko-tgl",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "",
   "main": "src/index.js",
   "type": "module",
@@ -22,12 +22,12 @@
     },
 
     "./jsx-adapter/*":{
-      "import": "./src/jsx-adapter/core/*/index.js",
-      "types": "./src/jsx-adapter/core/*/index.d.ts"
+      "import": "./jsx-adapter/core/*/index.js",
+      "types": "./jsx-adapter/core/*/index.d.ts"
     },
     "./jsx-adapter":{
-      "import": "./src/jsx-adapter/core/index.js",
-      "types": "./src/jsx-adapter/core/index.d.ts"
+      "import": "./jsx-adapter/core/index.js",
+      "types": "./jsx-adapter/core/index.d.ts"
     },
 
     "./dist": {
